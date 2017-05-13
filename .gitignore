@@ -19,3 +19,5 @@ yarn-error.log*
 
 /node_moudules
 *.scss
+*.scssc
+*.map
