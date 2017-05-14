@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cea22a8b-5b40-4850-ba93-9eb9c0a69ac5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/offsetLeft.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/MusicControl.js" afterPath="$PROJECT_DIR$/src/Components/MusicControl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/main.css" afterPath="$PROJECT_DIR$/src/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/MusicNow.js" afterPath="$PROJECT_DIR$/src/redux/MusicNow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/time.js" afterPath="$PROJECT_DIR$/src/utils/time.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -412,7 +406,7 @@
       <option name="presentableId" value="Default" />
       <updated>1494609413467</updated>
       <workItem from="1494609416286" duration="39103000" />
-      <workItem from="1494747160698" duration="14540000" />
+      <workItem from="1494747160698" duration="15202000" />
     </task>
     <task id="LOCAL-00001" summary="compressed css &#10;">
       <created>1494747593486</created>
@@ -421,11 +415,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494747593486</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="the timeline of current music is finished:rocket&#10;&#10;">
+      <created>1494781179273</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1494781179273</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53643000" />
+    <option name="totallyTimeSpent" value="54305000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
@@ -460,7 +461,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="compressed css &#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="compressed css &#10;" />
+    <MESSAGE value="the timeline of current music is finished:rocket&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="the timeline of current music is finished:rocket&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
