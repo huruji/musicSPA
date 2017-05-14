@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cea22a8b-5b40-4850-ba93-9eb9c0a69ac5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/main.css" afterPath="$PROJECT_DIR$/src/css/main.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -79,8 +80,8 @@
       <file leaf-file-name="MusicControl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/MusicControl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="116">
+              <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
                 <marker date="1494780868622" expanded="true" signature="1576:1782" ph="..." />
@@ -406,7 +407,7 @@
       <option name="presentableId" value="Default" />
       <updated>1494609413467</updated>
       <workItem from="1494609416286" duration="39103000" />
-      <workItem from="1494747160698" duration="15202000" />
+      <workItem from="1494747160698" duration="15364000" />
     </task>
     <task id="LOCAL-00001" summary="compressed css &#10;">
       <created>1494747593486</created>
@@ -422,11 +423,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494781179273</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="the timeline of current music is finished:rocket&#10;&#10;">
+      <created>1494782694942</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1494782694942</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54305000" />
+    <option name="totallyTimeSpent" value="54467000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
@@ -868,8 +876,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/MusicControl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        <state relative-caret-position="116">
+          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
             <marker date="1494780868622" expanded="true" signature="1576:1782" ph="..." />
