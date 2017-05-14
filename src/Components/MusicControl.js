@@ -10,6 +10,7 @@ class MusicControl extends Component {
     this.playShift = this.playShift.bind(this);
     this.changeVolume = this.changeVolume.bind(this);
     this.changeMuted = this.changeMuted.bind(this);
+    this.changeTimeLine = this.changeTimeLine.bind(this)
   }
   playShift(){
     this.props.playStateShift(this.audio);
@@ -27,13 +28,23 @@ class MusicControl extends Component {
       this.timer =setInterval(function(){
         const currentTime = this.audio.currentTime;
         this.props.changeCurTime(currentTime);
-      }.bind(this),1)
+      }.bind(this),1000)
     }
+  }
+  timeUpdate(e){
+    
+  }
+  changeTimeLine(e){
+    console.log(this.props);
+    const currentTime = (e.clientX - offsetLeft(e.currentTarget)) / e.currentTarget.clientWidth * this.props.totalTime;
+    this.props.changeCurTime(currentTime);
+    this.audio.currentTime = currentTime;
   }
   componentDidMount(){
     this.props.playStateShift(this.audio);
     this.audio.volume = this.props.volume / 100;
     this.changeTime();
+    
   }
   componentDidUpdate(){
     this.audio.volume = this.props.volume / 100;
@@ -49,7 +60,7 @@ class MusicControl extends Component {
     totalTime = duration(totalTime);
     return(
       <div className="music-box">
-        <audio src={this.props.song_url} ref={(audio) => {this.audio = audio;}}/>
+        <audio src={this.props.song_url} ref={(audio) => {this.audio = audio;}} />
         <div className="music-control">
           <span className="m-icon m-prev music-prev" />
           <span className={`m-icon music-play ${play}`} onClick={this.playShift}/>
@@ -71,7 +82,7 @@ class MusicControl extends Component {
           <div className="music-listcnt">{}</div>
         </div>
         <div className="music-timeline">
-          <div className="music-lineContainer" >
+          <div className="music-lineContainer" onClick={this.changeTimeLine}>
             <div className="music-playhead" style={{width:current}}></div>
           </div>
         </div>
