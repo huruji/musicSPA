@@ -1,8 +1,7 @@
 export function duration(time){
-  time = Number(time);
-  console.log(time > 60);
+  time = Number.parseInt(time);
   if(time < 60){
-    return '00:' + time;
+    return time > 9 ? `00:${time}` : `00:0${time}`;
   } else if(time > 60) {
     let min = Math.floor(time / 60);
     let sec = time % 60;
