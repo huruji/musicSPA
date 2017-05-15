@@ -1,8 +1,9 @@
 import React,{ Component } from 'react';
 import {connect} from 'react-redux';
-import {playStateShift, changeVolume, changeMuted, changeCurTime} from '../redux/MusicNow';
+import {playStateShift, changeVolume, changeMuted, changeCurTime, actPlayState} from '../redux/MusicNow';
 import offsetLeft from '../utils/offsetLeft';
 import {duration} from '../utils/time';
+import {fetchPlaySong} from './../redux/MusicNow';
 
 class MusicControl extends Component {
   constructor(){
@@ -44,17 +45,38 @@ class MusicControl extends Component {
     this.props.playStateShift(this.audio);
     this.audio.volume = this.props.volume / 100;
     this.changeTime();
-    
   }
-  componentDidUpdate(){
+  componentDidUpdate(prevProps){
+    console.log('this.props');
+    console.log(this.props);
     this.audio.volume = this.props.volume / 100;
     this.audio.muted = this.props.muted;
     this.changeTime();
-  }
-  componentWillUpdate(nextProps){
-    if(this.props.song_url !== nextProps.song_url){
+    if (this.props.song_url !== prevProps.song_url) {
       this.audio.load();
+      console.log(11111);
+      console.log('netwoekstate:');
+      console.log(this.audio.networkState);
+      if (this.audio.networkState == 1) {
+        clearInterval(this.songTimer);
+        this.audio.play();
+        console.log('play net');
+      }
+      this.songTimer = setInterval(function () {
+        if(this.audio.networkState == 3 || this.audio.networkState == 2) {
+          this.audio.load();
+        } else if(this.audio.networkState == 1) {
+          clearInterval(this.songTimer);
+          this.audio.play();
+          console.log('play net');
+        }
+          console.log('netwoekstate:');
+          console.log(this.audio.networkState);
+          
+        }.bind(this), 30);
+      }
     }
+  componentWillUpdate(nextProps) {
   }
   render(){
     let {play,volume,muted,curTime,totalTime} = this.props;
@@ -106,16 +128,19 @@ const mapStateToProps = (state) => {
     volume: musicNow.volume,
     muted: musicNow.muted,
     curTime: musicNow.curTime,
-    totalTime: musicNow.totalTime
+    totalTime: musicNow.totalTime,
+    song_id: musicNow.song_id
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    actPlayState: () => dispatch(actPlayState()),
     playStateShift: audio => dispatch(playStateShift(audio)),
     changeVolume: volume => dispatch(changeVolume(volume)),
     changeMuted: () => dispatch(changeMuted()),
-    changeCurTime: (time) => dispatch(changeCurTime(time))
+    changeCurTime: (time) => dispatch(changeCurTime(time)),
+    fetchPlaySong: (song_id) => dispatch(fetchPlaySong(song_id)),
   }
 };
 

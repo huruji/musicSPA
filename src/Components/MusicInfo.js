@@ -7,11 +7,11 @@ class MusicInfo extends Component {
     super();
   }
   render(){
-    console.log(this.props);
+    /*console.log(this.props);*/
     const {title, author, bg} = this.props;
     return(
      <div className="music-info">
-       <a href="" className="music-img" style={{background: `url(${this.props.bg})`}}></a>
+       <a href="" className="music-img" style={{background: `url(${bg})`}}></a>
        <div className="music-baseInfo">
          <h6>{title}</h6>
          <p>{author}</p>
