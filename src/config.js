@@ -1,6 +1,7 @@
 const CONFIG = {
-  baseUrl: 'http://tingapi.ting.baidu.com/v1/restserver/ting',
+  baseUrl: 'http://localhost:4000/v1/restserver/ting',
   channelMethod: 'method=baidu.ting.billboard.billList',
+  songMethod: 'method=baidu.ting.song.playAAC&songid='
 };
 
 export default CONFIG;

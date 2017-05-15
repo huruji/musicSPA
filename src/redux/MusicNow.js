@@ -1,8 +1,14 @@
 import React from 'react';
+import fetchJsonp from 'fetch-jsonp';
+import CONFIG from './../config';
+import changeSongJson from './../utils/changSongJson';
+
 const PLAYERSTATESHIFT = 'PLAYERSTATESHIFT';
 const CHANGEVOLUME = 'CHANGEVOLUME';
 const CHANGEMUTED = 'CHANGEMUTED';
 const CHANGECURTIME = 'CHANGECURTIME';
+const UPDATEPLAYSONG = 'UPDATEPLAYSONG';
+
 const initState = {
   playFlag:true,
   pic_small: 'http://musicdata.baidu.com/data2/pic/ab055cc7c59de25a37f06f060ec3bccf/540561450/540561450.jpg@s_0,w_90',
@@ -28,7 +34,9 @@ const MusicNow = (state = initState, action) => {
       const muted = !state.muted;
       return {...state, muted:muted};
     case CHANGECURTIME:
-      return {...state, curTime: action.curTime}
+      return {...state, curTime: action.curTime};
+    case UPDATEPLAYSONG:
+      return {...initState, ...action.item};
     default:
       return state;
   }
@@ -57,5 +65,25 @@ export const changeCurTime = (time) => {
     type:CHANGECURTIME,
     curTime: time
   }
-}
+};
+export const updatePlaySong = (song) => {
+  return {
+    type: UPDATEPLAYSONG,
+    item: song
+  }
+};
+
+export const fetchPlaySong = (id, audio) => {
+  return (dispatch, getState) => {
+    const url = `${CONFIG.baseUrl}?${CONFIG.songMethod}${id}`;
+    return fetchJsonp(url,{
+      timeout: 10000
+    })
+      .then(response => response.json())
+      .then(json => {
+       const song = changeSongJson(json);
+        dispatch(updatePlaySong(song));
+      })
+  }
+};
 export default MusicNow;

@@ -51,6 +51,11 @@ class MusicControl extends Component {
     this.audio.muted = this.props.muted;
     this.changeTime();
   }
+  componentWillUpdate(nextProps){
+    if(this.props.song_url !== nextProps.song_url){
+      this.audio.load();
+    }
+  }
   render(){
     let {play,volume,muted,curTime,totalTime} = this.props;
     const current = `${curTime / totalTime * 100}%`;
@@ -60,7 +65,9 @@ class MusicControl extends Component {
     totalTime = duration(totalTime);
     return(
       <div className="music-box">
-        <audio src={this.props.song_url} ref={(audio) => {this.audio = audio;}} />
+        <audio ref={(audio) => {this.audio = audio;}} >
+          <source src={this.props.song_url}/>
+        </audio>
         <div className="music-control">
           <span className="m-icon m-prev music-prev" />
           <span className={`m-icon music-play ${play}`} onClick={this.playShift}/>

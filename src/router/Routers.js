@@ -11,9 +11,9 @@ class Routers extends Component{
       <div>
         <Switch>
           <Route exact path="/" component={LocalList}/>
-          <Route exact path="/search" component={Search}/>
+          <Route exact path="search" component={Search}/>
           <Route path="/channel/:id" component={ChannelContainer}/>
-          <Route path="/lyric" component={Lyric}/>
+          <Route path="lyric" component={Lyric}/>
         </Switch>
       </div>
     )
