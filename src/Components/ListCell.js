@@ -1,13 +1,14 @@
 import React,{ Component } from 'react';
 import {duration} from '../utils/time';
 import {connect} from 'react-redux';
-import {fetchAddPlaySong, loveShift} from './../redux';
+import {fetchAddPlaySong, loveShift, addSongToPlayList} from './../redux';
 
 class ListCell extends Component{
   constructor(){
     super();
     this.play = this.play.bind(this);
     this.loveShift = this.loveShift.bind(this);
+    this.addPlayList = this.addPlayList.bind(this);
   }
   play(){
     this.props.play(this.props.song_id);
@@ -15,6 +16,10 @@ class ListCell extends Component{
   loveShift() {
     console.log('love');
     this.props.loveShift(this.props.song_id);
+  }
+  addPlayList() {
+    console.log('add');
+    this.props.addPlayList(this.props.song_id);
   }
   render() {
     console.log('this.props');
@@ -25,7 +30,7 @@ class ListCell extends Component{
         <td style={{textAlign:"right"}}>{seq}</td>
         <td>
           <span className="m-icon m-heart" style={{color: heartColor}} onClick={this.loveShift}/>
-          <span className="cell-add">+</span>
+          <span className="cell-add" onClick={this.addPlayList}>+</span>
         </td>
         <td>{title}</td>
         <td>{author}</td>
@@ -43,7 +48,8 @@ const mapStateTOProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return{
     play: (song_id, index) => dispatch(fetchAddPlaySong(song_id)),
-    loveShift: (song_id) => dispatch(loveShift(song_id))
+    loveShift: (song_id) => dispatch(loveShift(song_id)),
+    addPlayList: (song_id) => dispatch(addSongToPlayList(song_id))
   }
 };
 

@@ -16,7 +16,6 @@ const PlayList = function(state = initState, action){
     case UPDATEPLAYLIST:
       return {
         ...state,
-        length:state.length + action.items.length,
         song_list: state.song_list.concat(action.items)
       };
     case ADDPLAYLISTSONG:
