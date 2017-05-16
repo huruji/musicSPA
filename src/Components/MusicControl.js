@@ -84,8 +84,6 @@ class MusicControl extends Component {
       }
     }
   componentWillUpdate(nextProps){
-    console.log('this.props.newSong');
-    console.log(this.props.newSong);
     if (this.props.song_url !== nextProps.song_url) {
       this.audio.pause();
     }

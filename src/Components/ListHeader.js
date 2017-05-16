@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
 
 class ListHeader extends Component{
+  constructor(props){
+    super(props);
+    this.playAll = this.playAll.bind(this);
+  }
+  playAll(){
+    this.props.playAll();
+  }
   render(){
     return(
     <div className="list-header">
@@ -16,7 +23,7 @@ class ListHeader extends Component{
         </div>
         <div className="list-btn">
           <div className="list-playAll">
-            <span className="list-text" onClick={this.props.playAll}>
+            <span className="list-text" onClick={this.playAll}>
               <i className="m-icon m-play"></i>
               播放全部
             </span>
@@ -34,4 +41,6 @@ class ListHeader extends Component{
     );
   }
 }
+
+
 export default ListHeader;

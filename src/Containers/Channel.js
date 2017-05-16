@@ -6,6 +6,7 @@ import CONFIG from './../config';
 import changeJson from './../utils/changeJson';
 import  {fetchChannelList} from './../redux/Channel';
 import {connect} from 'react-redux';
+import {playAll} from './../redux/index'
 
 class ChannelContainer extends Component{
   constructor(props){
@@ -24,7 +25,7 @@ class ChannelContainer extends Component{
     let {name, avator_url, length, date, comment, song_list, action} = this.props;
     return(
       <div>
-        <ListHeader url={avator_url} listName={name} listcnt={length} date={date} comment={comment}/>
+        <ListHeader url={avator_url} listName={name} listcnt={length} date={date} comment={comment} playAll={this.props.playAll}/>
         <ListContent listContent={song_list}/>
       </div>
     )
@@ -45,7 +46,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchChannelList: (json) => {dispatch(fetchChannelList(json))}
+    fetchChannelList: (json) => {dispatch(fetchChannelList(json))},
+    playAll: () => dispatch(playAll())
   }
 };
 
