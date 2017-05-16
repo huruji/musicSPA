@@ -2,6 +2,7 @@ import Redux from 'redux';
 
 const UPDATELOCALLIST = 'UPDATELOCALLIST';
 const DELETEROMLOCALLIST = 'DELETEROMLOCALLIST';
+const ADDLOCALPLAYLIST = 'ADDLOCALPLAYLIST';
 
 const LocalPlayList = function(state, action){
   if(!state){
@@ -19,6 +20,12 @@ const LocalPlayList = function(state, action){
         ...state,
         length: state.song_list.length - 1,
         song_list: [].concat(state.song_list.slice(0,action.index), state.song_list.slice(action.index + 1))
+      };
+    case ADDLOCALPLAYLIST:
+      return{
+        ...state,
+        length: state.length + action.song.length,
+        song_list: state.song_list.concat(action.song)
       };
     default:
       return state;
@@ -39,4 +46,11 @@ export const deleteRomLocalList = (index) => {
   }
 };
 
+export const addLocalPlayList = (song) => {
+  return {
+    type: ADDLOCALPLAYLIST,
+    song: song
+  }
+};
+6
 export default LocalPlayList;

@@ -21,7 +21,7 @@ class SideBar extends Component{
         <dt>创建的歌单</dt>
         <dd>
           <span className="m-icon m-heart"/>
-          <NavLink to='/locallist' activeStyle={{color: '#000'}}>我喜欢的音乐</NavLink>
+          <NavLink to='/' activeStyle={{color: '#000'}}>我喜欢的音乐</NavLink>
         </dd>
       </dl>
     )

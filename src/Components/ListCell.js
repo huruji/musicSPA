@@ -1,23 +1,30 @@
 import React,{ Component } from 'react';
 import {duration} from '../utils/time';
 import {connect} from 'react-redux';
-import {fetchAddPlaySong} from './../redux';
+import {fetchAddPlaySong, loveShift} from './../redux';
 
 class ListCell extends Component{
   constructor(){
     super();
     this.play = this.play.bind(this);
+    this.loveShift = this.loveShift.bind(this);
   }
   play(){
-    this.props.play(this.props.song_id, this.props.seq - 1);
+    this.props.play(this.props.song_id);
+  }
+  loveShift() {
+    console.log('love');
+    this.props.loveShift(this.props.song_id);
   }
   render() {
-    const {seq, title, author, album_title, durationStyle, file_duration} = this.props;
+    console.log('this.props');
+    console.log(this.props);
+    const {seq, title, author, album_title, durationStyle, file_duration, heartColor} = this.props;
     return(
       <tr className="cell" onDoubleClick={this.play}>
         <td style={{textAlign:"right"}}>{seq}</td>
         <td>
-          <span className="m-icon m-heart"/>
+          <span className="m-icon m-heart" style={{color: heartColor}} onClick={this.loveShift}/>
           <span className="cell-add">+</span>
         </td>
         <td>{title}</td>
@@ -29,11 +36,14 @@ class ListCell extends Component{
   }
 }
 const mapStateTOProps = (state, ownProps) => {
-  return {...ownProps, file_duration: duration(ownProps.file_duration)}
+  const localSongListIds = state.LocalPlayList.song_list.map(item => item.song_id);
+  const heartColor = localSongListIds.includes(ownProps.song_id) ? '#EB363F' : '#cdd2d7';
+  return {...ownProps, file_duration: duration(ownProps.file_duration), heartColor}
 };
 const mapDispatchToProps = (dispatch) => {
   return{
-    play: (song_id, index) => dispatch(fetchAddPlaySong(song_id,index))
+    play: (song_id, index) => dispatch(fetchAddPlaySong(song_id)),
+    loveShift: (song_id) => dispatch(loveShift(song_id))
   }
 };
 

@@ -9,6 +9,7 @@ class LocalList extends Component{
   render(){
     let {name, bg, length, date, comment, song_list, action} = this.props;
     let durationShow = true;
+    console.log(this.props);
     return(
       <div>
         <ListHeader url={bg} listName={name} listcnt={length} date={date} comment={comment} />
@@ -25,7 +26,8 @@ const mapStateToProps = (state) => {
     name: localPlayList.name,
     length: localPlayList.length,
     date: localPlayList.date,
-    comment:localPlayList.comment
+    comment:localPlayList.comment,
+    song_list: localPlayList.song_list
   }
 };
 

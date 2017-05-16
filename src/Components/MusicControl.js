@@ -57,6 +57,7 @@ class MusicControl extends Component {
     this.audio.muted = this.props.muted;
     this.changeTime();
     if (this.props.song_url !== prevProps.song_url) {
+      clearInterval(this.songTimer);
       this.audio.load();
       console.log(11111);
       console.log('netwoekstate:');
