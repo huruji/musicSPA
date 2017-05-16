@@ -1,7 +1,7 @@
 import React,{ Component } from 'react';
 import {duration} from '../utils/time';
 import {connect} from 'react-redux';
-import {fetchPlaySong} from './../redux/MusicNow';
+import {fetchAddPlaySong} from './../redux';
 
 class ListCell extends Component{
   constructor(){
@@ -9,7 +9,7 @@ class ListCell extends Component{
     this.play = this.play.bind(this);
   }
   play(){
-    this.props.play(this.props.song_id);
+    this.props.play(this.props.song_id, this.props.seq - 1);
   }
   render() {
     const {seq, title, author, album_title, durationStyle, file_duration} = this.props;
@@ -33,7 +33,7 @@ const mapStateTOProps = (state, ownProps) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return{
-    play: (song_id, audio) => dispatch(fetchPlaySong(song_id))
+    play: (song_id, index) => dispatch(fetchAddPlaySong(song_id,index))
   }
 };
 

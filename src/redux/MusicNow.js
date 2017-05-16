@@ -9,6 +9,8 @@ const CHANGEMUTED = 'CHANGEMUTED';
 const CHANGECURTIME = 'CHANGECURTIME';
 const UPDATEPLAYSONG = 'UPDATEPLAYSONG';
 const ACTPLAYSTATE = 'ACTPLAYSTATE';
+const UPDATENEWSONG = 'UPDATENEWSONG';
+
 const initState = {
   playFlag:true,
   pic_small: 'http://musicdata.baidu.com/data2/pic/ab055cc7c59de25a37f06f060ec3bccf/540561450/540561450.jpg@s_0,w_90',
@@ -20,7 +22,8 @@ const initState = {
   volume: 40,
   muted: false,
   curTime:0,
-  totalTime: 269
+  totalTime: 269,
+  newSong:false
 };
 
 const MusicNow = (state = initState, action) => {
@@ -39,11 +42,19 @@ const MusicNow = (state = initState, action) => {
       return {...state, ...action.item, playFlag: action.playFlag, curTime: 0};
     case ACTPLAYSTATE:
       return {...initState, playFlag: true};
+    case UPDATENEWSONG:
+      return {...state, newSong: action.newSong};
     default:
       return state;
   }
 };
 
+export const updateNewSong = (newSong) => {
+  return {
+    type: UPDATENEWSONG,
+    newSong: newSong
+  }
+};
 
 export const playStateShift = (audio)=>{
   return (dispatch, getState) => {
@@ -78,21 +89,6 @@ export const updatePlaySong = (song) => {
 export const actPlayState = () => {
   return{
     type: ACTPLAYSTATE
-  }
-};
-export const fetchPlaySong = (id, audio) => {
-  return (dispatch, getState) => {
-    const url = `${CONFIG.baseUrl}?${CONFIG.songMethod}${id}`;
-    return fetchJsonp(url,{
-      timeout: 10000
-    })
-      .then(response => response.json())
-      .then(json => {
-       const song = changeSongJson(json);
-       /*console.log('song');
-       console.log(song);*/
-        dispatch(updatePlaySong(song));
-      })
   }
 };
 export default MusicNow;

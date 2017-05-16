@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {playStateShift, changeVolume, changeMuted, changeCurTime, actPlayState} from '../redux/MusicNow';
 import offsetLeft from '../utils/offsetLeft';
 import {duration} from '../utils/time';
-import {fetchPlaySong} from './../redux/MusicNow';
+import {updateNewSong} from './../redux/MusicNow';
 
 class MusicControl extends Component {
   constructor(){
@@ -47,8 +47,13 @@ class MusicControl extends Component {
     this.changeTime();
   }
   componentDidUpdate(prevProps){
-    console.log('this.props');
-    console.log(this.props);
+    if(this.props.newSong){
+      console.log('newProps.curTime');
+      console.log(this.props.curTime);
+    
+      this.audio.currentTime = this.props.curTime;
+      this.props.updateNewSong(!this.props.newSong);
+    }
     this.audio.volume = this.props.volume / 100;
     this.audio.muted = this.props.muted;
     this.changeTime();
@@ -57,8 +62,11 @@ class MusicControl extends Component {
       console.log(11111);
       console.log('netwoekstate:');
       console.log(this.audio.networkState);
+      this.audio.currentTime = this.props.curTime;
       if (this.audio.networkState == 1) {
         clearInterval(this.songTimer);
+        console.log(this.props);
+        this.audio.currentTime = this.props.curTime;
         this.audio.play();
         console.log('play net');
       }
@@ -76,7 +84,12 @@ class MusicControl extends Component {
         }.bind(this), 30);
       }
     }
-  componentWillUpdate(nextProps) {
+  componentWillUpdate(nextProps){
+    console.log('this.props.newSong');
+    console.log(this.props.newSong);
+    if (this.props.song_url !== nextProps.song_url) {
+      this.audio.pause();
+    }
   }
   render(){
     let {play,volume,muted,curTime,totalTime} = this.props;
@@ -129,7 +142,8 @@ const mapStateToProps = (state) => {
     muted: musicNow.muted,
     curTime: musicNow.curTime,
     totalTime: musicNow.totalTime,
-    song_id: musicNow.song_id
+    song_id: musicNow.song_id,
+    newSong: musicNow.newSong
   }
 };
 
@@ -140,7 +154,7 @@ const mapDispatchToProps = (dispatch) => {
     changeVolume: volume => dispatch(changeVolume(volume)),
     changeMuted: () => dispatch(changeMuted()),
     changeCurTime: (time) => dispatch(changeCurTime(time)),
-    fetchPlaySong: (song_id) => dispatch(fetchPlaySong(song_id)),
+    updateNewSong: (newSong) => dispatch(updateNewSong(newSong)),
   }
 };
 
