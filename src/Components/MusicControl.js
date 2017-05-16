@@ -50,7 +50,6 @@ class MusicControl extends Component {
     if(this.props.newSong){
       console.log('newProps.curTime');
       console.log(this.props.curTime);
-    
       this.audio.currentTime = this.props.curTime;
       this.props.updateNewSong(!this.props.newSong);
     }
