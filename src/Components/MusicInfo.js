@@ -11,7 +11,7 @@ class MusicInfo extends Component {
     const {title, author, bg} = this.props;
     return(
      <div className="music-info">
-       <a href="" className="music-img" style={{background: `url(${bg})`}}></a>
+       <Link to="/lyric" className='music-img' style={bg}></Link>
        <div className="music-baseInfo">
          <h6>{title}</h6>
          <p>{author}</p>
@@ -26,7 +26,7 @@ const mapStateToProps = (state) => {
   return{
     title: musicNow.song_title,
     author: musicNow.song_author,
-    bg: musicNow.pic_small
+    bg: {background: `url(${musicNow.pic_small})`}
   }
 };
 

@@ -8,12 +8,12 @@ import LocalList from './../Containers/LocalList'
 class Routers extends Component{
   render(){
     return(
-      <div>
-        <Switch>
+      <div style={{height: '100%'}}>
+        <Switch style={{height: '100%'}}>
           <Route exact path="/" component={LocalList}/>
           <Route exact path="search" component={Search}/>
           <Route path="/channel/:id" component={ChannelContainer}/>
-          <Route path="lyric" component={Lyric}/>
+          <Route path="/lyric" component={Lyric}/>
         </Switch>
       </div>
     )
