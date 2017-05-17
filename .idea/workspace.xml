@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cea22a8b-5b40-4850-ba93-9eb9c0a69ac5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/visualDOM.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/ListCell.js" afterPath="$PROJECT_DIR$/src/Components/ListCell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/MusicControl.js" afterPath="$PROJECT_DIR$/src/Components/MusicControl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Containers/PlayListPanel.js" afterPath="$PROJECT_DIR$/src/Containers/PlayListPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/MusicNow.js" afterPath="$PROJECT_DIR$/src/redux/MusicNow.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/PlayList.js" afterPath="$PROJECT_DIR$/src/redux/PlayList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/index.js" afterPath="$PROJECT_DIR$/src/redux/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +29,8 @@
       <file leaf-file-name="ListCell.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/ListCell.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+            <state relative-caret-position="598">
+              <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -35,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/redux/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            <state relative-caret-position="130">
+              <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -50,8 +53,8 @@
       <file leaf-file-name="MusicNow.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/redux/MusicNow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="56" column="2" lean-forward="false" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
+            <state relative-caret-position="444">
+              <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -62,41 +65,39 @@
       <file leaf-file-name="PlayList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/redux/PlayList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Routers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/router/Routers.js">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
-              <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+              <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SideBar.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/SideBar.js">
+      <file leaf-file-name="PlayListPanel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/PlayListPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+            <state relative-caret-position="208">
+              <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LocalList.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Containers/LocalList.js">
+      <file leaf-file-name="MusicPanel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Containers/MusicPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="286">
+              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayListPanel.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Containers/PlayListPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="10" column="60" lean-forward="false" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,23 +105,12 @@
       <file leaf-file-name="MusicControl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/MusicControl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+            <state relative-caret-position="-518">
+              <caret line="126" column="68" lean-forward="true" selection-start-line="126" selection-start-column="68" selection-end-line="126" selection-end-column="68" />
               <folding>
+                <element signature="e#0#40#0" expanded="true" />
                 <element signature="n#!!block;n#changeTimeLine#0;n#MusicControl#0" expanded="false" />
                 <element signature="n#!!block;n#componentDidMount#0;n#MusicControl#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Channel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/redux/Channel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-              <folding>
-                <element signature="e#85#123#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,8 +119,18 @@
       <file leaf-file-name="LocaPlayList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/redux/LocaPlayList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
+            <state relative-caret-position="1066">
               <caret line="41" column="31" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="visualDOM.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/visualDOM.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -178,17 +178,18 @@
         <option value="$PROJECT_DIR$/src/utils/changSongJson.js" />
         <option value="$PROJECT_DIR$/src/css/curplaylist.scss" />
         <option value="$PROJECT_DIR$/src/Components/PlayListTable.js" />
-        <option value="$PROJECT_DIR$/src/Containers/PlayListPanel.js" />
-        <option value="$PROJECT_DIR$/src/redux/MusicNow.js" />
         <option value="$PROJECT_DIR$/src/Components/ListHeader.js" />
         <option value="$PROJECT_DIR$/src/Containers/Channel.js" />
         <option value="$PROJECT_DIR$/src/redux/LocaPlayList.js" />
-        <option value="$PROJECT_DIR$/src/Components/MusicControl.js" />
         <option value="$PROJECT_DIR$/src/Containers/LocalList.js" />
         <option value="$PROJECT_DIR$/src/Components/SideBar.js" />
-        <option value="$PROJECT_DIR$/src/redux/PlayList.js" />
-        <option value="$PROJECT_DIR$/src/Components/ListCell.js" />
         <option value="$PROJECT_DIR$/src/redux/index.js" />
+        <option value="$PROJECT_DIR$/visualDOM.js" />
+        <option value="$PROJECT_DIR$/src/Components/ListCell.js" />
+        <option value="$PROJECT_DIR$/src/Components/MusicControl.js" />
+        <option value="$PROJECT_DIR$/src/redux/MusicNow.js" />
+        <option value="$PROJECT_DIR$/src/redux/PlayList.js" />
+        <option value="$PROJECT_DIR$/src/Containers/PlayListPanel.js" />
       </list>
     </option>
   </component>
@@ -224,7 +225,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -283,12 +283,31 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Containers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="musicSPA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="musicSPA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -379,7 +398,8 @@
       <workItem from="1494900650532" duration="9519000" />
       <workItem from="1494914933792" duration="1865000" />
       <workItem from="1494935490021" duration="9570000" />
-      <workItem from="1494949390921" duration="2782000" />
+      <workItem from="1494949390921" duration="5632000" />
+      <workItem from="1494997959523" duration="2570000" />
     </task>
     <task id="LOCAL-00001" summary="compressed css &#10;">
       <created>1494747593486</created>
@@ -458,17 +478,24 @@
       <option name="project" value="LOCAL" />
       <updated>1494950208501</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="完成单击添加到播放队列功能:rocket&#10;&#10;">
+      <created>1494952219499</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1494952219499</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109447000" />
+    <option name="totallyTimeSpent" value="114867000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15153733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15080526" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -504,7 +531,9 @@
     <MESSAGE value="解决多次双击播放时间不返回0的问题:rocket&#10;&#10;" />
     <MESSAGE value="完成播放全部的功能:rocket&#10;&#10;" />
     <MESSAGE value="修复双击播放列表不同步增加歌曲的bug:bug&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复双击播放列表不同步增加歌曲的bug:bug&#10;&#10;" />
+    <MESSAGE value="完成单击添加到播放队列功能:rocket&#10;&#10;" />
+    <MESSAGE value="完成播放列表显示隐藏切换功能::rocket&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成播放列表显示隐藏切换功能::rocket&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -518,25 +547,12 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Components/MusicInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Containers/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/MusicControl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#40#0" expanded="true" />
             <element signature="n#!!block;n#changeTimeLine#0;n#MusicControl#0" expanded="false" />
             <element signature="n#!!block;n#componentDidMount#0;n#MusicControl#0" expanded="false" />
           </folding>
@@ -661,13 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Containers/MusicPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/changSongJson.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -745,23 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/PlayListPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Containers/PlayListPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/PlayListTable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -780,7 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,7 +780,7 @@
         <state relative-caret-position="910">
           <caret line="35" column="40" lean-forward="true" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -798,7 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -806,7 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -828,38 +817,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Containers/LocalList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
+        <state relative-caret-position="624">
           <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="38" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/MusicControl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-          <folding>
-            <element signature="n#!!block;n#changeTimeLine#0;n#MusicControl#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidMount#0;n#MusicControl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/MusicNow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="56" column="2" lean-forward="false" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/Channel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
+        <state relative-caret-position="858">
           <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
           <folding>
             <element signature="e#85#123#0" expanded="true" />
@@ -869,37 +837,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/LocaPlayList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
+        <state relative-caret-position="1066">
           <caret line="41" column="31" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/PlayList.js">
+    <entry file="file://$PROJECT_DIR$/src/redux/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        <state relative-caret-position="130">
+          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/visualDOM.JS" />
+    <entry file="file://$PROJECT_DIR$/visualDOM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Containers/MusicPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/ListCell.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        <state relative-caret-position="598">
+          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/index.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/MusicControl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="-518">
+          <caret line="126" column="68" lean-forward="true" selection-start-line="126" selection-start-column="68" selection-end-line="126" selection-end-column="68" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
+            <element signature="n#!!block;n#changeTimeLine#0;n#MusicControl#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#MusicControl#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/MusicNow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/PlayList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/PlayListPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Containers/PlayListPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="10" column="60" lean-forward="false" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>

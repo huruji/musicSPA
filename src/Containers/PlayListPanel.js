@@ -16,7 +16,7 @@ class PlayListPanel extends Component {
     console.log('this.props.songlist');
     console.log(this.props.songList);
     return(
-      <div className="playlist" style={{display:'block'}}>
+      <div className="playlist" style={{display:this.props.show}}>
         <div className="playlist-type">播放列表</div>
         <div className="playlist-info">
           <span className="playlist-cnt">总{this.props.length}首</span>
@@ -38,9 +38,12 @@ class PlayListPanel extends Component {
 
 const mapStateToProps = (state) => {
   const playList = state.PlayList;
+  const musicNow = state.MusicNow;
+  const show = musicNow.playListShow ? 'block' : 'none';
   return {
     songList: playList.song_list,
-    length: playList.song_list.length
+    length: playList.song_list.length,
+    show: show
   }
 };
 

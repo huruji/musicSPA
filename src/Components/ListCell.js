@@ -22,8 +22,6 @@ class ListCell extends Component{
     this.props.addPlayList(this.props.song_id);
   }
   render() {
-    console.log('this.props');
-    console.log(this.props);
     const {seq, title, author, album_title, durationStyle, file_duration, heartColor} = this.props;
     return(
       <tr className="cell" onDoubleClick={this.play}>

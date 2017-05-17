@@ -10,6 +10,7 @@ const CHANGECURTIME = 'CHANGECURTIME';
 const UPDATEPLAYSONG = 'UPDATEPLAYSONG';
 const ACTPLAYSTATE = 'ACTPLAYSTATE';
 const UPDATENEWSONG = 'UPDATENEWSONG';
+const PLAYLISTSHOW = 'PLAYLISTSHOW';
 
 const initState = {
   playFlag:true,
@@ -23,7 +24,8 @@ const initState = {
   muted: false,
   curTime:0,
   totalTime: 269,
-  newSong:false
+  newSong:false,
+  playListShow: false
 };
 
 const MusicNow = (state = initState, action) => {
@@ -44,6 +46,10 @@ const MusicNow = (state = initState, action) => {
       return {...initState, playFlag: true};
     case UPDATENEWSONG:
       return {...state, newSong: action.newSong};
+    case PLAYLISTSHOW:
+      const show = !state.playListShow;
+      console.log(show);
+      return {...state, playListShow: show};
     default:
       return state;
   }
@@ -91,4 +97,10 @@ export const actPlayState = () => {
     type: ACTPLAYSTATE
   }
 };
+export const playListShow = () => {
+  return {
+    type: PLAYLISTSHOW
+  }
+};
+
 export default MusicNow;

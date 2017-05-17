@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import {connect} from 'react-redux';
-import {playStateShift, changeVolume, changeMuted, changeCurTime, actPlayState} from '../redux/MusicNow';
+import {playStateShift, changeVolume, changeMuted, changeCurTime, actPlayState, playListShow} from '../redux/MusicNow';
 import offsetLeft from '../utils/offsetLeft';
 import {duration} from '../utils/time';
 import {updateNewSong} from './../redux/MusicNow';
@@ -11,7 +11,13 @@ class MusicControl extends Component {
     this.playShift = this.playShift.bind(this);
     this.changeVolume = this.changeVolume.bind(this);
     this.changeMuted = this.changeMuted.bind(this);
-    this.changeTimeLine = this.changeTimeLine.bind(this)
+    this.changeTimeLine = this.changeTimeLine.bind(this);
+    this.playListShow = this.playListShow.bind(this);
+  }
+  playListShow(){
+    console.log(1212);
+    console.log(this.props.show);
+    this.props.playListShow()
   }
   playShift(){
     this.props.playStateShift(this.audio);
@@ -118,7 +124,7 @@ class MusicControl extends Component {
         <div className="music-playMode" >
           <span className={`m-icon`}></span>
         </div>
-        <div className="music-listicon" >
+        <div className="music-listicon" onClick={this.playListShow}>
           <div className="music-listcnt">{}</div>
         </div>
         <div className="music-timeline">
@@ -141,7 +147,8 @@ const mapStateToProps = (state) => {
     curTime: musicNow.curTime,
     totalTime: musicNow.totalTime,
     song_id: musicNow.song_id,
-    newSong: musicNow.newSong
+    newSong: musicNow.newSong,
+    show: musicNow.playListShow,
   }
 };
 
@@ -153,6 +160,7 @@ const mapDispatchToProps = (dispatch) => {
     changeMuted: () => dispatch(changeMuted()),
     changeCurTime: (time) => dispatch(changeCurTime(time)),
     updateNewSong: (newSong) => dispatch(updateNewSong(newSong)),
+    playListShow: () => dispatch(playListShow())
   }
 };
 
