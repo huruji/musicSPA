@@ -125,7 +125,7 @@ class MusicControl extends Component {
           <span className={`m-icon`}></span>
         </div>
         <div className="music-listicon" onClick={this.playListShow}>
-          <div className="music-listcnt">{}</div>
+          <div className="music-listcnt">{this.props.songCount}</div>
         </div>
         <div className="music-timeline">
           <div className="music-lineContainer" onClick={this.changeTimeLine}>
@@ -139,6 +139,7 @@ class MusicControl extends Component {
 
 const mapStateToProps = (state) => {
   const musicNow = state.MusicNow;
+  const playList = state.PlayList;
   return {
     song_url: musicNow.song_url,
     play: musicNow.playFlag,
@@ -149,6 +150,7 @@ const mapStateToProps = (state) => {
     song_id: musicNow.song_id,
     newSong: musicNow.newSong,
     show: musicNow.playListShow,
+    songCount: playList.song_list.length
   }
 };
 

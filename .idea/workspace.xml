@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cea22a8b-5b40-4850-ba93-9eb9c0a69ac5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/visualDOM.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/ListCell.js" afterPath="$PROJECT_DIR$/src/Components/ListCell.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/MusicControl.js" afterPath="$PROJECT_DIR$/src/Components/MusicControl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Containers/PlayListPanel.js" afterPath="$PROJECT_DIR$/src/Containers/PlayListPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/MusicNow.js" afterPath="$PROJECT_DIR$/src/redux/MusicNow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/PlayList.js" afterPath="$PROJECT_DIR$/src/redux/PlayList.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -92,36 +87,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayListPanel.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayListPanel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Containers/PlayListPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="10" column="60" lean-forward="false" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+            <state relative-caret-position="1170">
+              <caret line="51" column="4" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MusicControl.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ListCellView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/ListCellView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MusicControl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/MusicControl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-518">
-              <caret line="126" column="68" lean-forward="true" selection-start-line="126" selection-start-column="68" selection-end-line="126" selection-end-column="68" />
+            <state relative-caret-position="1822">
+              <caret line="155" column="0" lean-forward="true" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
                 <element signature="n#!!block;n#changeTimeLine#0;n#MusicControl#0" expanded="false" />
                 <element signature="n#!!block;n#componentDidMount#0;n#MusicControl#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocaPlayList.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/redux/LocaPlayList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1066">
-              <caret line="41" column="31" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="31" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -186,10 +181,10 @@
         <option value="$PROJECT_DIR$/src/redux/index.js" />
         <option value="$PROJECT_DIR$/visualDOM.js" />
         <option value="$PROJECT_DIR$/src/Components/ListCell.js" />
-        <option value="$PROJECT_DIR$/src/Components/MusicControl.js" />
         <option value="$PROJECT_DIR$/src/redux/MusicNow.js" />
         <option value="$PROJECT_DIR$/src/redux/PlayList.js" />
         <option value="$PROJECT_DIR$/src/Containers/PlayListPanel.js" />
+        <option value="$PROJECT_DIR$/src/Components/MusicControl.js" />
       </list>
     </option>
   </component>
@@ -399,7 +394,7 @@
       <workItem from="1494914933792" duration="1865000" />
       <workItem from="1494935490021" duration="9570000" />
       <workItem from="1494949390921" duration="5632000" />
-      <workItem from="1494997959523" duration="2570000" />
+      <workItem from="1494997959523" duration="2783000" />
     </task>
     <task id="LOCAL-00001" summary="compressed css &#10;">
       <created>1494747593486</created>
@@ -485,11 +480,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494952219499</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="完成播放列表显示隐藏切换功能::rocket&#10;&#10;">
+      <created>1495000548031</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1495000548031</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114867000" />
+    <option name="totallyTimeSpent" value="115080000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
@@ -792,13 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/ListCellView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/router/Routers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -880,18 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/MusicControl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-518">
-          <caret line="126" column="68" lean-forward="true" selection-start-line="126" selection-start-column="68" selection-end-line="126" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <element signature="n#!!block;n#changeTimeLine#0;n#MusicControl#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidMount#0;n#MusicControl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/MusicNow.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
@@ -920,9 +903,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Containers/PlayListPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="10" column="60" lean-forward="false" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+        <state relative-caret-position="1170">
+          <caret line="51" column="4" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/ListCellView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/MusicControl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1822">
+          <caret line="155" column="0" lean-forward="true" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+            <element signature="n#!!block;n#changeTimeLine#0;n#MusicControl#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#MusicControl#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
