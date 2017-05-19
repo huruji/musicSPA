@@ -4,10 +4,14 @@ import  {duration} from './../utils/time'
 class PlayListTable extends Component {
   constructor(){
     super();
+    this.playSong = this.playSong.bind(this);
+  }
+  playSong(){
+    this.props.playSong(this.props.song_id);
   }
   render(){
     return (
-      <tr className="cell" >
+      <tr className="cell" onClick={this.playSong}>
         <td>
           <span ></span>
           {this.props.title}

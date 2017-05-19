@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 import PlayListTable from '../Components/PlayListTable';
 import {addPlayList} from './../redux/PlayList';
 import {connect} from 'react-redux';
-
+import {fetchAddPlaySong} from '../redux'
 class PlayListPanel extends Component {
   constructor(){
     super();
@@ -10,7 +10,7 @@ class PlayListPanel extends Component {
   render(){
     const Table = this.props.songList.map((item, index) => {
       return (
-        <PlayListTable {...item} key={index} seq={index + 1}/>
+        <PlayListTable {...item} key={index} seq={index + 1} playSong={this.props.playSong}/>
       )
     });
     console.log('this.props.songlist');
@@ -49,7 +49,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    
+    playSong: (songId) => dispatch(fetchAddPlaySong(songId))
   }
 };
 
