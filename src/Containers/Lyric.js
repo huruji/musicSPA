@@ -8,7 +8,7 @@ class Lyric extends Component{
   render() {
     return(
       <div className="lyric clear-float">
-        <LyricImg pic_big={this.props.pic_big} />
+        <LyricImg pic_big={this.props.pic_big} playFlag={this.props.playFlag}/>
         <div className="lyric-container">
           <LyricInfo title={this.props.title} album_title={this.props.album_title} author={this.props.author} />
           <LyricContent/>
@@ -24,7 +24,9 @@ const mapStateToProps = (state) => {
     title: musicNow.song_title,
     author: musicNow.song_author,
     album_title: musicNow.album_title,
-    pic_big: musicNow.pic_big
+    pic_big: musicNow.pic_big,
+    muted: musicNow.muted,
+    playFlag: musicNow.playFlag
   }
 };
 
