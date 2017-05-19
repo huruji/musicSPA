@@ -11,6 +11,7 @@ export default function changeSongJson(song){
     song_id: song.songinfo.song_id,
     song_title: song.songinfo.title,
     song_author: song.songinfo.author,
-    totalTime: song.songinfo.file_duration
+    totalTime: song.songinfo.file_duration,
+    album_title: song.songinfo.album_title
   }
 }

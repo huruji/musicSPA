@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import LyricInfo from './../Components/LyricInfo';
 import LyricContent from './../Components/LyricContent';
+import {connect} from 'react-redux';
 
 class Lyric extends Component{
   render() {
@@ -14,7 +15,7 @@ class Lyric extends Component{
           </div>
         </div>
         <div className="lyric-container">
-          <LyricInfo />
+          <LyricInfo title={this.props.title} album_title={this.props.album_title} author={this.props.author} />
           <LyricContent/>
         </div>
       </div>
@@ -22,4 +23,13 @@ class Lyric extends Component{
   }
 }
 
-export default  Lyric;
+const mapStateToProps = (state) => {
+  const musicNow = state.MusicNow;
+  return {
+    title: musicNow.song_title,
+    author: musicNow.song_author,
+    album_title: musicNow.album_title
+  }
+};
+
+export default  connect(mapStateToProps)(Lyric);

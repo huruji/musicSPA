@@ -14,11 +14,9 @@ class ListCell extends Component{
     this.props.play(this.props.song_id);
   }
   loveShift() {
-    console.log('love');
     this.props.loveShift(this.props.song_id);
   }
   addPlayList() {
-    console.log('add');
     this.props.addPlayList(this.props.song_id);
   }
   render() {

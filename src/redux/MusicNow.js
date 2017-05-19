@@ -25,7 +25,8 @@ const initState = {
   curTime:0,
   totalTime: 269,
   newSong:false,
-  playListShow: false
+  playListShow: false,
+  album_title: '我害怕'
 };
 
 const MusicNow = (state = initState, action) => {
