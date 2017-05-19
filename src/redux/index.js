@@ -94,7 +94,6 @@ export const playAll = () => {
 
 export const loveShift = (song_id) => {
   return (dispatch, getState) => {
-   /* console.log(getState().LocalPlayList);*/
     const localSongIds = getState().LocalPlayList.song_list.map(item => item.song_id);
     if(localSongIds.includes(song_id)){
       console.log('delete');
@@ -104,13 +103,57 @@ export const loveShift = (song_id) => {
       getState().ResiveMusic.song_list.forEach((item, index, arr) => {
         if(item.song_id == song_id) {
           song.push({...arr[index]});
-          /*console.log('song');
-          console.log(song);*/
           console.log('getState().LocalPlayList.song_list');
           console.log(getState().LocalPlayList.song_list);
           dispatch(addLocalPlayList(song))
         }
       });
+    }
+  }
+};
+
+export const playNext = () => {
+  return (dispatch, getState) => {
+    const songId = getState().MusicNow.song_id;
+    const playList = getState().PlayList.song_list;
+    let index;
+    playList.forEach((item, i) => {
+      if(item.song_id === songId) {
+        index = i;
+      }
+    });
+    console.log('index');
+    console.log(index);
+    if(index !== undefined && index < playList.length - 1){
+      console.log('kasjf');
+      const newSongId = playList[index + 1].song_id;
+      dispatch(fetchAddPlaySong(newSongId))
+    } else if(index !== undefined && index == playList.length - 1) {
+      const newSongId = playList[0].song_id;
+      dispatch(fetchAddPlaySong(newSongId))
+    }
+  }
+};
+
+export const playPrev = () => {
+  return (dispatch, getState) => {
+    const songId = getState().MusicNow.song_id;
+    const playList = getState().PlayList.song_list;
+    let index;
+    playList.forEach((item, i) => {
+      if(item.song_id === songId) {
+        index = i;
+      }
+    });
+    console.log('index');
+    console.log(index);
+    if(index !== undefined && index > 0){
+      console.log('kasjf');
+      const newSongId = playList[index - 1].song_id;
+      dispatch(fetchAddPlaySong(newSongId))
+    } else if(index !== undefined && index == 0) {
+      const newSongId = playList[playList.length -1].song_id;
+      dispatch(fetchAddPlaySong(newSongId))
     }
   }
 };

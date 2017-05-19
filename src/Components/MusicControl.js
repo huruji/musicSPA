@@ -4,6 +4,7 @@ import {playStateShift, changeVolume, changeMuted, changeCurTime, actPlayState, 
 import offsetLeft from '../utils/offsetLeft';
 import {duration} from '../utils/time';
 import {updateNewSong} from './../redux/MusicNow';
+import {playNext, playPrev} from './../redux';
 
 class MusicControl extends Component {
   constructor(){
@@ -13,6 +14,8 @@ class MusicControl extends Component {
     this.changeMuted = this.changeMuted.bind(this);
     this.changeTimeLine = this.changeTimeLine.bind(this);
     this.playListShow = this.playListShow.bind(this);
+    this.playNext = this.playNext.bind(this);
+    this.playPrev = this.playPrev.bind(this);
   }
   playListShow(){
     console.log(1212);
@@ -38,8 +41,13 @@ class MusicControl extends Component {
       }.bind(this),1000)
     }
   }
-  timeUpdate(e){
-    
+  playNext(){
+    console.log('next');
+    this.props.playNext();
+  }
+  playPrev() {
+    console.log('prev');
+    this.props.playPrev();
   }
   changeTimeLine(e){
     console.log(this.props);
@@ -104,13 +112,13 @@ class MusicControl extends Component {
     totalTime = duration(totalTime);
     return(
       <div className="music-box">
-        <audio ref={(audio) => {this.audio = audio;}} >
+        <audio ref={(audio) => {this.audio = audio;}} onEnded={this.playNext}>
           <source src={this.props.song_url}/>
         </audio>
         <div className="music-control">
-          <span className="m-icon m-prev music-prev" />
+          <span className="m-icon m-prev music-prev" onClick={this.playPrev}/>
           <span className={`m-icon music-play ${play}`} onClick={this.playShift}/>
-          <span className="m-icon m-next music-next" />
+          <span className="m-icon m-next music-next" onClick={this.playNext}/>
         </div>
         <span className="music-curTime">{curTime}</span>
         <span className="music-totalTime">{totalTime}</span>
@@ -162,7 +170,9 @@ const mapDispatchToProps = (dispatch) => {
     changeMuted: () => dispatch(changeMuted()),
     changeCurTime: (time) => dispatch(changeCurTime(time)),
     updateNewSong: (newSong) => dispatch(updateNewSong(newSong)),
-    playListShow: () => dispatch(playListShow())
+    playListShow: () => dispatch(playListShow()),
+    playNext: () => dispatch(playNext()),
+    playPrev: () => dispatch(playPrev())
   }
 };
 
