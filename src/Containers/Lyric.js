@@ -16,6 +16,11 @@ class Lyric extends Component{
   componentDidMount(){
     this.getLyric();
   }
+  componentDidUpdate(prevProps){
+    if(this.props.song_id !== prevProps.song_id){
+      this.getLyric();
+    }
+  }
   render() {
     return(
       <div className="lyric clear-float">
