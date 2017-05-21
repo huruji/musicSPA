@@ -2,7 +2,6 @@ import React,{ Component } from 'react';
 
 class LyricInfo extends Component {
   render(){
-    console.log(this.props);
     return(
       <div className="lyric-info">
         <h3>{this.props.title}</h3>

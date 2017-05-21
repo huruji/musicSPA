@@ -2,8 +2,6 @@ import React,{ Component } from 'react';
 
 class LyricImg extends Component {
   render(){
-    console.log(this.props);
-
     return(
         <div className="lyric-operation" >
           <div className="lyric-outer rotate" style={{animationPlayState: this.props.playFlag ? 'running' : 'paused'}}>

@@ -2,6 +2,7 @@ import React from 'react';
 import fetchJsonp from 'fetch-jsonp';
 import CONFIG from './../config';
 import changeSongJson from './../utils/changSongJson';
+import changeLyric from './../utils/changeLyric';
 
 const PLAYERSTATESHIFT = 'PLAYERSTATESHIFT';
 const CHANGEVOLUME = 'CHANGEVOLUME';
@@ -11,6 +12,7 @@ const UPDATEPLAYSONG = 'UPDATEPLAYSONG';
 const ACTPLAYSTATE = 'ACTPLAYSTATE';
 const UPDATENEWSONG = 'UPDATENEWSONG';
 const PLAYLISTSHOW = 'PLAYLISTSHOW';
+const GETSONGLYRIC = 'GETSONGLYRIC';
 
 const initState = {
   playFlag:true,
@@ -26,7 +28,9 @@ const initState = {
   totalTime: 269,
   newSong:false,
   playListShow: false,
-  album_title: '我害怕'
+  album_title: '我害怕',
+  lyricContent:[],
+  lyricTime: []
 };
 
 const MusicNow = (state = initState, action) => {
@@ -51,6 +55,8 @@ const MusicNow = (state = initState, action) => {
       const show = !state.playListShow;
       console.log(show);
       return {...state, playListShow: show};
+    case GETSONGLYRIC:
+      return {...state, lyricContent:action.lyricContent, lyricTime: action.lyricTime};
     default:
       return state;
   }
@@ -101,6 +107,29 @@ export const actPlayState = () => {
 export const playListShow = () => {
   return {
     type: PLAYLISTSHOW
+  }
+};
+
+export const getSongLyric = (lyric) => {
+  return {
+    type: GETSONGLYRIC,
+    lyricContent: lyric.lyricContent,
+    lyricTime: lyric.lyricTime
+  }
+}
+
+export const getLyric = (song_id) => {
+  return (dispatch, getState) => {
+    console.log('songid');
+    console.log(song_id);
+    const url = `${CONFIG.baseUrl}?${CONFIG.songLyric}${song_id}`;
+    console.log(url);
+    fetchJsonp(url)
+        .then(response => response.json())
+        .then(json => {
+          const lyric = changeLyric(json);
+          dispatch(getSongLyric(lyric));
+        })
   }
 };
 
