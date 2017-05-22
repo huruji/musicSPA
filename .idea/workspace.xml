@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cea22a8b-5b40-4850-ba93-9eb9c0a69ac5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Containers/Lyric.js" afterPath="$PROJECT_DIR$/src/Containers/Lyric.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/main.css" afterPath="$PROJECT_DIR$/src/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/SideBar.js" afterPath="$PROJECT_DIR$/src/Components/SideBar.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -97,16 +96,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="changeLyric.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/changeLyric.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LyricContent.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/LyricContent.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -119,14 +108,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lyric.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Lyric.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Containers/Lyric.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+            <state relative-caret-position="437">
+              <caret line="26" column="63" lean-forward="false" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SideBar.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Components/SideBar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -176,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/Containers/Channel.js" />
         <option value="$PROJECT_DIR$/src/redux/LocaPlayList.js" />
         <option value="$PROJECT_DIR$/src/Containers/LocalList.js" />
-        <option value="$PROJECT_DIR$/src/Components/SideBar.js" />
         <option value="$PROJECT_DIR$/visualDOM.js" />
         <option value="$PROJECT_DIR$/src/redux/PlayList.js" />
         <option value="$PROJECT_DIR$/src/Components/MusicInfo.js" />
@@ -196,6 +194,7 @@
         <option value="$PROJECT_DIR$/src/css/lyric.scss" />
         <option value="$PROJECT_DIR$/src/Components/LyricContent.js" />
         <option value="$PROJECT_DIR$/src/Containers/Lyric.js" />
+        <option value="$PROJECT_DIR$/src/Components/SideBar.js" />
       </list>
     </option>
   </component>
@@ -329,24 +328,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Containers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="musicSPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="musicSPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -449,7 +430,7 @@
       <workItem from="1495175657807" duration="883000" />
       <workItem from="1495347451721" duration="655000" />
       <workItem from="1495377846498" duration="5438000" />
-      <workItem from="1495384755659" duration="4218000" />
+      <workItem from="1495384755659" duration="7094000" />
     </task>
     <task id="LOCAL-00001" summary="compressed css &#10;">
       <created>1494747593486</created>
@@ -598,11 +579,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495388965898</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="修正切换歌曲歌词不切换的bug::bug&#10;&#10;">
+      <created>1495389301419</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1495389301419</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139324000" />
+    <option name="totallyTimeSpent" value="142200000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -663,7 +651,8 @@
     <MESSAGE value="添加双击播放列表播放的功能::rocket&#10;&#10;" />
     <MESSAGE value="添加歌词页面卡带旋转功能::rocket&#10;&#10;" />
     <MESSAGE value="添加歌词同步滚动功能::rocket&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加歌词同步滚动功能::rocket&#10;&#10;" />
+    <MESSAGE value="修正切换歌曲歌词不切换的bug::bug&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正切换歌曲歌词不切换的bug::bug&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -751,13 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/SideBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1033,11 +1015,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Containers/Lyric.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="437">
+          <caret line="26" column="63" lean-forward="false" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/SideBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
