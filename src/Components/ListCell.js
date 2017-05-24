@@ -29,7 +29,7 @@ class ListCell extends Component{
           <span className="cell-add" onClick={this.addPlayList}>+</span>
         </td>
         <td>{title}</td>
-        <td>{author}</td>
+        <td dangerouslySetInnerHTML={author}></td>
         <td>{album_title}</td>
         <td style={durationStyle}> {file_duration} </td>
       </tr>
