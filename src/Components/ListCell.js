@@ -19,7 +19,7 @@ class ListCell extends Component{
     this.props.loveShift(this.props.song_id, this.props.loveSearchList);
   }
   addPlayList() {
-    this.props.addPlayList(this.props.song_id);
+    this.props.addPlayList(this.props.song_id, this.props.loveSearchList);
   }
   render() {
     console.log(this.props);
@@ -31,7 +31,7 @@ class ListCell extends Component{
           <span className="m-icon m-heart" style={{color: heartColor}} onClick={this.loveShift}/>
           <span className="cell-add" onClick={this.addPlayList}>+</span>
         </td>
-        <td>{title}</td>
+        <td dangerouslySetInnerHTML={{__html: title}}></td>
         <td dangerouslySetInnerHTML={{__html: author}}></td>
         <td dangerouslySetInnerHTML={{__html:album_title}}></td>
         <td style={{display: showDuration}}> {file_duration} </td>
@@ -48,7 +48,7 @@ const mapDispatchToProps = (dispatch) => {
   return{
     play: (song_id, index) => dispatch(fetchAddPlaySong(song_id)),
     loveShift: (song_id,loveSearchList) => dispatch(loveShift(song_id, loveSearchList)),
-    addPlayList: (song_id) => dispatch(addSongToPlayList(song_id))
+    addPlayList: (song_id, loveSearchList) => dispatch(addSongToPlayList(song_id, loveSearchList))
   }
 };
 

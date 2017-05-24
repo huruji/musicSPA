@@ -20,9 +20,9 @@ const rootReducer = combineReducers({
   PlayList,
   SearchList
 });
-export const addSongToPlayList  = (song_id) => {
+export const addSongToPlayList  = (song_id, loveSearchList) => {
   return (dispatch, getState) => {
-    const receiveIds = getState().ResiveMusic.song_list.map((item) => {return item.song_id});
+    const receiveIds = loveSearchList.map((item) => {return item.song_id});
     const playListIds = getState().PlayList.song_list.map((item) => {return item.song_id});
     console.log('ids');
     console.log(song_id);
@@ -31,7 +31,7 @@ export const addSongToPlayList  = (song_id) => {
     if(receiveIds.includes(song_id) && !playListIds.includes(song_id)) {
       let addSong;
       console.log('addSong');
-      getState().ResiveMusic.song_list.forEach((item, index, arr) => {
+      loveSearchList.forEach((item, index, arr) => {
         if(item.song_id == song_id) {
           addSong = {...arr[index]};
           console.log(addSong);
