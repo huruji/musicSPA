@@ -22,11 +22,11 @@ class ChannelContainer extends Component{
     }
   }
   render() {
-    let {name, avator_url, length, date, comment, song_list, action} = this.props;
+    let {name, avator_url, length, date, comment, song_list, action, loveSearchList} = this.props;
     return(
       <div>
         <ListHeader url={avator_url} listName={name} listcnt={length} date={date} comment={comment} playAll={this.props.playAll}/>
-        <ListContent listContent={song_list}/>
+        <ListContent listContent={song_list } showDuration='table-cell' loveSearchList={loveSearchList}/>
       </div>
     )
   }
@@ -34,13 +34,15 @@ class ChannelContainer extends Component{
 
 const mapStateToProps = (state) => {
   const resiveMusic = state.ResiveMusic;
+  const loveSearchList = state.ResiveMusic.song_list;
   return {
     avator_url: resiveMusic.avator_url,
     name: resiveMusic.name,
     length: resiveMusic.length,
     date: resiveMusic.date,
     comment: resiveMusic.comment,
-    song_list: resiveMusic.song_list
+    song_list: resiveMusic.song_list,
+    loveSearchList: loveSearchList
   }
 };
 

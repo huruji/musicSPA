@@ -13,7 +13,7 @@ class Search extends Component{
         <div>
           <div className="search-header">
           </div>
-          <ListContent listContent={this.props.songList}/>
+          <ListContent listContent={this.props.songList} showDuration="none" loveSearchList={this.props.loveSearchList}/>
         </div>
     )
   }
@@ -23,7 +23,8 @@ const mapStateToProps = (state) => {
   const searchList = state.SearchList;
   return{
       songList:searchList.searchSongList,
-      keyword: searchList.searchKeyword
+      keyword: searchList.searchKeyword,
+      loveSearchList: searchList.searchSongList
   }
 };
 const mapDispatchToProps = (dispatch) => {

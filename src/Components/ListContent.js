@@ -13,10 +13,10 @@ class ListContent extends Component{
             <th>音乐标题</th>
             <th>歌手</th>
             <th>专辑</th>
-            <th>时长</th>
+            <th style={{display: this.props.showDuration}}>时长</th>
           </tr>
           </thead>
-          <ListCellView list={this.props.listContent}/>
+          <ListCellView list={this.props.listContent} showDuration={this.props.showDuration} loveSearchList={this.props.loveSearchList}/>
         </table>
       </div>
     )

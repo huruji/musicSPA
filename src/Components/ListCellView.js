@@ -10,7 +10,7 @@ class ListCellView extends Component{
       <tbody>
       {
         this.props.list.map((item, index) => (
-          <ListCell key={index} seq={index + 1} {...item}/>
+          <ListCell key={index} seq={index + 1} {...item} showDuration={this.props.showDuration} loveSearchList={this.props.loveSearchList}/>
           ))
       }
       </tbody>

@@ -14,13 +14,16 @@ class ListCell extends Component{
     this.props.play(this.props.song_id);
   }
   loveShift() {
-    this.props.loveShift(this.props.song_id);
+    console.log('love');
+    console.log(this.props);
+    this.props.loveShift(this.props.song_id, this.props.loveSearchList);
   }
   addPlayList() {
     this.props.addPlayList(this.props.song_id);
   }
   render() {
-    const {seq, title, author, album_title, durationStyle, file_duration, heartColor} = this.props;
+    console.log(this.props);
+    const {seq, title, author, album_title, showDuration, file_duration, heartColor} = this.props;
     return(
       <tr className="cell" onDoubleClick={this.play}>
         <td style={{textAlign:"right"}}>{seq}</td>
@@ -29,9 +32,9 @@ class ListCell extends Component{
           <span className="cell-add" onClick={this.addPlayList}>+</span>
         </td>
         <td>{title}</td>
-        <td dangerouslySetInnerHTML={author}></td>
-        <td>{album_title}</td>
-        <td style={durationStyle}> {file_duration} </td>
+        <td dangerouslySetInnerHTML={{__html: author}}></td>
+        <td dangerouslySetInnerHTML={{__html:album_title}}></td>
+        <td style={{display: showDuration}}> {file_duration} </td>
       </tr>
     )
   }
@@ -44,7 +47,7 @@ const mapStateTOProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return{
     play: (song_id, index) => dispatch(fetchAddPlaySong(song_id)),
-    loveShift: (song_id) => dispatch(loveShift(song_id)),
+    loveShift: (song_id,loveSearchList) => dispatch(loveShift(song_id, loveSearchList)),
     addPlayList: (song_id) => dispatch(addSongToPlayList(song_id))
   }
 };

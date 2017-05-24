@@ -94,15 +94,17 @@ export const playAll = () => {
   }
 };
 
-export const loveShift = (song_id) => {
+export const loveShift = (song_id,songList) => {
   return (dispatch, getState) => {
     const localSongIds = getState().LocalPlayList.song_list.map(item => item.song_id);
     if(localSongIds.includes(song_id)){
       console.log('delete');
       dispatch(deleteRomLocalList(localSongIds.indexOf(song_id)));
     } else {
+      console.log('safsdf');
       let song = [];
-      getState().ResiveMusic.song_list.forEach((item, index, arr) => {
+      console.log(songList);
+      songList.forEach((item, index, arr) => {
         if(item.song_id == song_id) {
           song.push({...arr[index]});
           console.log('getState().LocalPlayList.song_list');
