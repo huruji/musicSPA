@@ -3,22 +3,24 @@ import {combineReducers} from 'redux';
 import LocalPlayList from './LocaPlayList';
 import ResiveMusic from './Channel';
 import MusicNow from './MusicNow';
-import PlayList from './PlayList'
-import SearchList from './Search'
+import PlayList from './PlayList';
+import SearchList from './Search';
+import Recommand from './Recommand'
 
 import fetchJsonp from 'fetch-jsonp';
 import CONFIG from './../config';
 import changeSongJson from './../utils/changSongJson';
 import {updatePlaySong, updateNewSong} from './MusicNow';
 import {addPlayList, updateAllPlayList} from './PlayList';
-import {addLocalPlayList, deleteRomLocalList} from './LocaPlayList'
+import {addLocalPlayList, deleteRomLocalList} from './LocaPlayList';
 
 const rootReducer = combineReducers({
   LocalPlayList,
   ResiveMusic,
   MusicNow,
   PlayList,
-  SearchList
+  SearchList,
+  Recommand
 });
 export const addSongToPlayList  = (song_id, loveSearchList) => {
   return (dispatch, getState) => {
