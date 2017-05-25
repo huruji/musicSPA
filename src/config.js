@@ -6,7 +6,10 @@ const CONFIG = {
   searchMethod: 'method=baidu.ting.search.common&query=',
   searchSize: '&page_no=&page_size=500',
   recommend: 'method=baidu.ting.song.getRecommandSongList&song_id=',
-  recommendSize: '&num=5'
+  recommendSize: '&num=5',
+  artistInfo: 'method=baidu.ting.artist.getInfo&tinguid=',
+  artistSong: 'method=baidu.ting.artist.getSongList&limits=3000&tinguid=',
+  artistAlbum: 'method=baidu.ting.artist.getAlbumList&order=1&tinguid='
 };
 
 export default CONFIG;

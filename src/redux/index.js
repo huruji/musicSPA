@@ -5,7 +5,9 @@ import ResiveMusic from './Channel';
 import MusicNow from './MusicNow';
 import PlayList from './PlayList';
 import SearchList from './Search';
-import Recommand from './Recommand'
+import Recommand from './Recommand';
+import ArtistInfo from './ArtistInfo';
+import ArtistSong from './ArtistSong';
 
 import fetchJsonp from 'fetch-jsonp';
 import CONFIG from './../config';
@@ -20,7 +22,9 @@ const rootReducer = combineReducers({
   MusicNow,
   PlayList,
   SearchList,
-  Recommand
+  Recommand,
+  ArtistInfo,
+  ArtistSong
 });
 export const addSongToPlayList  = (song_id, loveSearchList) => {
   return (dispatch, getState) => {
