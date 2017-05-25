@@ -42,7 +42,7 @@ export const addSongToPlayList  = (song_id, loveSearchList) => {
   }
 };
 
-export const fetchAddPlaySong = (id) => {
+export const fetchAddPlaySong = (id,songList) => {
   return (dispatch, getState) => {
     const url = `${CONFIG.baseUrl}?${CONFIG.songMethod}${id}`;
     return fetchJsonp(url,{
@@ -56,7 +56,7 @@ export const fetchAddPlaySong = (id) => {
         if(!curSongIds.includes(id)){
           let addSong;
           console.log('include');
-          getState().ResiveMusic.song_list.forEach((item, index, arr) => {
+          songList.forEach((item, index, arr) => {
             if(item.song_id == id) {
               addSong = {...arr[index]};
               console.log('foreach');

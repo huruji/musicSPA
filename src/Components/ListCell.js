@@ -11,7 +11,7 @@ class ListCell extends Component{
     this.addPlayList = this.addPlayList.bind(this);
   }
   play(){
-    this.props.play(this.props.song_id);
+    this.props.play(this.props.song_id, this.props.loveSearchList);
   }
   loveShift() {
     console.log('love');
@@ -46,7 +46,7 @@ const mapStateTOProps = (state, ownProps) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return{
-    play: (song_id, index) => dispatch(fetchAddPlaySong(song_id)),
+    play: (song_id, loveSearchList) => dispatch(fetchAddPlaySong(song_id, loveSearchList)),
     loveShift: (song_id,loveSearchList) => dispatch(loveShift(song_id, loveSearchList)),
     addPlayList: (song_id, loveSearchList) => dispatch(addSongToPlayList(song_id, loveSearchList))
   }

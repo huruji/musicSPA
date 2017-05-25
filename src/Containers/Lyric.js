@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import LyricInfo from './../Components/LyricInfo';
 import LyricContent from './../Components/LyricContent';
 import LyricImg from './../Components/LyricImg';
+import Recommand from '../Components/Recommand';
 import {connect} from 'react-redux';
 import {getLyric} from '../redux/MusicNow';
 
@@ -24,11 +25,14 @@ class Lyric extends Component{
   render() {
     return(
       <div className="lyric clear-float">
-        <LyricImg pic_big={this.props.pic_big} playFlag={this.props.playFlag}/>
-        <div className="lyric-container">
-          <LyricInfo title={this.props.title} album_title={this.props.album_title} author={this.props.author}/>
-          <LyricContent lrclink={this.props.lrclink} lyricContent={this.props.lyricContent} lyricTime={this.props.lyricTime} curTime={this.props.curTime}/>
+        <div className="clear-float">
+          <LyricImg pic_big={this.props.pic_big} playFlag={this.props.playFlag}/>
+          <div className="lyric-container">
+            <LyricInfo title={this.props.title} album_title={this.props.album_title} author={this.props.author}/>
+            <LyricContent lrclink={this.props.lrclink} lyricContent={this.props.lyricContent} lyricTime={this.props.lyricTime} curTime={this.props.curTime}/>
+          </div>
         </div>
+        <Recommand/>
       </div>
     )
   }
