@@ -1,30 +1,27 @@
 import React, {Component} from 'react';
+import RecommandItem from './../Components/RecommandItem';
 
 class Recommand extends Component{
+  constructor(){
+    super();
+    this.fetchAddPlaySong = this.fetchAddPlaySong.bind(this);
+  }
+  fetchAddPlaySong(song_id){
+    this.props.fetchAddPlaySong(song_id);
+  }
+
   render(){
     return (
         <div className="recommand-container">
+          <p className="recommand-title">推荐歌曲</p>
           <ul className="clear-float">
-            <li>
-              <img src="http://musicdata.baidu.com/data2/pic/88410360/88410360.jpg@s_0,w_90" alt=""/>
-              <p>我只在乎你</p>
-            </li>
-            <li>
-              <img src="http://musicdata.baidu.com/data2/pic/f297ab6d37bb36dc7150f4a1064d9ffd/540600116/540600116.png@s_0,w_90" alt=""/>
-              <p>我只在乎你</p>
-            </li>
-            <li>
-              <img src="http://musicdata.baidu.com/data2/pic/f297ab6d37bb36dc7150f4a1064d9ffd/540600116/540600116.png@s_0,w_90" alt=""/>
-              <p>我只在乎你</p>
-            </li>
-            <li>
-              <img src="http://musicdata.baidu.com/data2/pic/f297ab6d37bb36dc7150f4a1064d9ffd/540600116/540600116.png@s_0,w_90" alt=""/>
-              <p>我只在乎你</p>
-            </li>
-            <li>
-              <img src="http://musicdata.baidu.com/data2/pic/f297ab6d37bb36dc7150f4a1064d9ffd/540600116/540600116.png@s_0,w_90" alt=""/>
-              <p>我只在乎你</p>
-            </li>
+            {
+              this.props.recommandList.map((item,i) => {
+                return (
+                    <RecommandItem key={i} song={item}  fetchAddPlaySong={this.fetchAddPlaySong}/>
+                )
+              })
+            }
           </ul>
         </div>
     )
