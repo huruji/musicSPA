@@ -35,7 +35,7 @@ class ArtistSong extends Component{
             this.props.artistAlbumInfo.map((item,index) => {
               console.log(item);
               return (
-                  <ArtistSongContent key={index} listContent={item.songlist} showDuration='table-cell' albumimg={item.albumInfo ? item.albumInfo.pic_big : ''} loveSearchList={item.songlist}/>
+                  <ArtistSongContent key={index} listContent={item.songlist} showDuration='table-cell' albumimg={item.albumInfo ? item.albumInfo.pic_big : ''} albumid={item.albumInfo ? item.albumInfo.album_id : ''} publishtime={item.albumInfo ? item.albumInfo.publishtime : ''} title={item.albumInfo ? item.albumInfo.title : ''}  loveSearchList={item.songlist}/>
               )
             })
           }

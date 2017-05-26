@@ -849,6 +849,17 @@ table {
   line-height: 1.8em;
   font-size: 14px; }
 
+.album-img-container {
+  float: left;
+  margin-top: 50px;
+  margin-right: 20px;
+  width: 150px; }
+
+.album-img-container p {
+  text-align: center;
+  color: #999;
+  font-size: 14px; }
+
 .artist-navbar {
   padding-left: 20px;
   border-bottom: 1px solid #C10D0C; }
