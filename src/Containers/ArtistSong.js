@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
 import ArtistHeader from './../Components/ArtistHeader';
-import ListContent from './../Components/ListContent';
+import ArtistSongContent from './../Components/ArtistSongContent';
 import {fetchArtistInfo} from './../redux/ArtistInfo';
 import {fetchArtistSong} from './../redux/ArtistSong';
+import {fetchArtistAlbum} from './../redux/AritstAlbum';
 import {connect} from 'react-redux';
 
 class ArtistSong extends Component{
@@ -14,6 +15,7 @@ class ArtistSong extends Component{
     const uid = this.props.match.params.tinguid;
     this.props.fetchArtistInfo(uid);
     this.props.fetchArtistSong(uid);
+    this.props.fetchArtistAlbum(uid);
   }
 
   render(){
@@ -21,8 +23,16 @@ class ArtistSong extends Component{
     console.log(this.props);
     return(
         <div>
-          <ArtistHeader artistInfo={this.props.artistInfo}/>
-          <ListContent listContent={this.props.songList} showDuration='table-cell' loveSearchList={this.props.songList}/>
+          <ArtistHeader {...this.props.artistInfo}/>
+          {
+            this.props.artistAlbumInfo.map((item,index) => {
+              console.log(item);
+              return (
+                  <ArtistSongContent key={index} listContent={item.songlist} showDuration='table-cell' albumimg={item.albumInfo ? item.albumInfo.pic_big : ''} loveSearchList={item.songlist}/>
+              )
+            })
+          }
+
         </div>
     )
   }
@@ -31,14 +41,16 @@ class ArtistSong extends Component{
 const mapStateToProps = (state) => {
   return {
     songList: state.ArtistSong.songList,
-    artistInfo: state.ArtistSong
+    artistInfo: state.ArtistInfo,
+    artistAlbumInfo: state.ArtistAlbum.albumInfo
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchArtistInfo: (tinguid) => dispatch(fetchArtistInfo(tinguid)),
-    fetchArtistSong: (tinguid) => dispatch(fetchArtistSong(tinguid))
+    fetchArtistSong: (tinguid) => dispatch(fetchArtistSong(tinguid)),
+    fetchArtistAlbum: (tinguid) => dispatch(fetchArtistAlbum(tinguid))
   }
 };
 
