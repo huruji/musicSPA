@@ -732,6 +732,9 @@ table {
   border: none;
   border-collapse: collapse; }
 
+.list-content table a {
+  color: #666; }
+
 .list-content thead tr {
   height: 28px;
   line-height: 28px;

@@ -21,3 +21,5 @@ yarn-error.log*
 *.scss
 *.scssc
 *.map
+/proxy/node_modules
+/proxy/public

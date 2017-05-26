@@ -2,6 +2,7 @@ import React,{ Component } from 'react';
 import {duration} from '../utils/time';
 import {connect} from 'react-redux';
 import {fetchAddPlaySong, loveShift, addSongToPlayList} from './../redux';
+import {Link} from 'react-router-dom';
 
 class ListCell extends Component{
   constructor(){
@@ -32,8 +33,8 @@ class ListCell extends Component{
           <span className="cell-add" onClick={this.addPlayList}>+</span>
         </td>
         <td dangerouslySetInnerHTML={{__html: title}}></td>
-        <td dangerouslySetInnerHTML={{__html: author}}></td>
-        <td dangerouslySetInnerHTML={{__html:album_title}}></td>
+        <td><Link to={`/artistsong/${this.props.ting_uid}`} dangerouslySetInnerHTML={{__html: author}}></Link></td>
+        <td><Link to={`/artistsong/${this.props.album_id}`} dangerouslySetInnerHTML={{__html:album_title}}></Link></td>
         <td style={{display: showDuration}}> {file_duration} </td>
       </tr>
     )
