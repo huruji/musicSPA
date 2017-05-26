@@ -849,4 +849,32 @@ table {
   line-height: 1.8em;
   font-size: 14px; }
 
+.artist-navbar {
+  padding-left: 20px;
+  border-bottom: 1px solid #C10D0C; }
+
+.artist-navbar-item a {
+  float: left;
+  width: 100px;
+  height: 28px;
+  line-height: 28px;
+  border: 1px solid #999;
+  text-align: center;
+  margin-right: 10px;
+  font-size: 14px;
+  border-bottom: none;
+  color: #333; }
+
+.artist-navbar-item .artist-navbar-item-active {
+  background: #C10D0C;
+  color: #fff; }
+
+.artist-intro {
+  margin: 50px 20px; }
+
+.artist-intro p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.8em; }
+
 /*# sourceMappingURL=main.css.map */

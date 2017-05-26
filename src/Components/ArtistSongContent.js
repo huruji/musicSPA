@@ -5,7 +5,7 @@ class ArtistSongContent extends Component{
   render() {
     return(
         <div className="clear-float" style={{margin:'0 20px'}}>
-          <div className="album-img-container" style={{float:'left',marginTop:'50px', marginRight:'20px'}}>
+          <div className="album-img-container" style={{float:'left',marginTop:'50px', marginRight:'20px',width:'150px'}}>
             <img src={this.props.albumimg} alt=""/>
           </div>
         <div className="list-content" style={{float:'left',width:'80%'}}>

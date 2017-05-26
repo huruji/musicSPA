@@ -5,6 +5,7 @@ import Search from './../Containers/Search';
 import Lyric from './../Containers/Lyric';
 import LocalList from './../Containers/LocalList';
 import ArtistSong from './../Containers/ArtistSong';
+import ArtistInfo from './../Containers/ArtistInfo';
 
 class Routers extends Component{
   render(){
@@ -16,6 +17,7 @@ class Routers extends Component{
           <Route path="/channel/:id" component={ChannelContainer}/>
           <Route path="/lyric" component={Lyric}/>
           <Route path="/artistsong/:tinguid" component={ArtistSong}/>
+          <Route path="/artistinfo/:tinguid" component={ArtistInfo}/>
         </Switch>
       </div>
     )
