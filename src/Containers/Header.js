@@ -18,9 +18,13 @@ class Header extends Component{
   };
   render(){
     return(
-      <div className="header">
+      <div className="header clear-float">
         <div className="logo">
-          Baidu音乐API
+          醉城音乐
+        </div>
+        <div className="header-nav-btn" style={{float:'left'}}>
+          <span><i className="iconfont">&#xf0343;</i></span>
+          <span><i className="iconfont">&#xf0344;</i></span>
         </div>
         <div className="searchArea">
           <input type="text" placeholder="搜索音乐，歌手，歌词" className="searchInput"  value={this.state.searchValue} ref={(keyword) => this.keyword = keyword} onChange={this.handleChange}/>
