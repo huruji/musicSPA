@@ -7,7 +7,6 @@ class MusicInfo extends Component {
     super();
   }
   render(){
-    /*console.log(this.props);*/
     const {title, author, bg} = this.props;
     return(
      <div className="music-info">

@@ -6,6 +6,8 @@ import Lyric from './../Containers/Lyric';
 import LocalList from './../Containers/LocalList';
 import ArtistSong from './../Containers/ArtistSong';
 import ArtistInfo from './../Containers/ArtistInfo';
+import AlbumSong from './../Containers/AlbumSong';
+import AlbumInfo from './../Containers/AlbumInfo';
 
 class Routers extends Component{
   render(){
@@ -18,6 +20,8 @@ class Routers extends Component{
           <Route path="/lyric" component={Lyric}/>
           <Route path="/artistsong/:tinguid" component={ArtistSong}/>
           <Route path="/artistinfo/:tinguid" component={ArtistInfo}/>
+          <Route path="/albumsong/:albumid" component={AlbumSong}/>
+          <Route path="/albuminfo/:albumid" component={AlbumInfo}/>
         </Switch>
       </div>
     )

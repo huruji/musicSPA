@@ -14,15 +14,12 @@ class ArtistAlbumListCell extends Component{
     this.props.play(this.props.song_id, this.props.loveSearchList);
   }
   loveShift() {
-    console.log('love');
-    console.log(this.props);
     this.props.loveShift(this.props.song_id, this.props.loveSearchList);
   }
   addPlayList() {
     this.props.addPlayList(this.props.song_id, this.props.loveSearchList);
   }
   render() {
-    console.log(this.props);
     const {seq, title, author, album_title, showDuration, file_duration, heartColor} = this.props;
     return(
         <tr className="cell" onDoubleClick={this.play}>

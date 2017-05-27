@@ -6,7 +6,6 @@ class ArtistIntro extends Component{
   }
 
   render(){
-    console.log(this.props);
     let intro = [], works=[], achievements = [];
     if(this.props.intro){
       const infoArr = this.props.intro.split('\n\n');
@@ -15,11 +14,6 @@ class ArtistIntro extends Component{
       intro = this.props.intro.substring(0, indexWorks).split('\n');
       works = this.props.intro.substring(indexWorks, indexAchi).split('\n');
       achievements = this.props.intro.substring(indexAchi).split('\n');
-      /*intro = infoArr[0].split('\n');
-      works = infoArr[1].split('\n');
-      achievements = infoArr[2].split('\n');*/
-      console.log(infoArr);
-      console.log(intro);
     }
 
     return(
