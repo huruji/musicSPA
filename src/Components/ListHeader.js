@@ -16,7 +16,7 @@ class ListHeader extends Component{
       <div className="list-info">
         <div className="list-title">
           <div>
-            <span className="list-logo">歌单</span>
+            <span className="list-logo" style={{backgroundColor: this.props.themeColor}}>歌单</span>
             <span className="list-name">{this.props.listName}</span>
           </div>
           <p>{this.props.date}创建</p>
@@ -24,7 +24,7 @@ class ListHeader extends Component{
         <div className="list-btn">
           <div className="list-playAll">
             <span className="list-text" onClick={this.playAll}>
-              <i className="m-icon m-play"></i>
+              <i className="m-icon m-play" style={{color: this.props.themeColor}}></i>
               播放全部
             </span>
             <span className="list-add">+</span>

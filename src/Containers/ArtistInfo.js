@@ -22,10 +22,10 @@ class ArtistInfo extends Component{
     console.log(this.props);
     return(
         <div>
-          <ArtistHeader {...this.props.artistInfo}/>
-          <ul className="artist-navbar clear-float">
-            <li className="artist-navbar-item"><NavLink to={`/artistsong/${this.props.match.params.tinguid}`} activeClassName='artist-navbar-item-active'>专辑</NavLink></li>
-            <li className="artist-navbar-item"><NavLink to={`/artistinfo/${this.props.match.params.tinguid}`} activeClassName='artist-navbar-item-active'>歌手详情</NavLink></li>
+          <ArtistHeader {...this.props.artistInfo} themeColor={this.props.themeColor}/>
+          <ul className="artist-navbar clear-float" style={{borderBottomColor: this.props.themeColor}}>
+            <li className="artist-navbar-item"><NavLink to={`/artistsong/${this.props.match.params.tinguid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: this.props.themeColor}}>专辑</NavLink></li>
+            <li className="artist-navbar-item"><NavLink to={`/artistinfo/${this.props.match.params.tinguid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: this.props.themeColor}}>歌手详情</NavLink></li>
           </ul>
 
           <ArtistIntro {...this.props.artistInfo}/>
@@ -35,10 +35,12 @@ class ArtistInfo extends Component{
 }
 
 const mapStateToProps = (state) => {
+  const themeColor = state.Setting.themes[state.Setting.curThemeIndex].color;
   return {
     songList: state.ArtistSong.songList,
     artistInfo: state.ArtistInfo,
-    artistAlbumInfo: state.ArtistAlbum.albumInfo
+    artistAlbumInfo: state.ArtistAlbum.albumInfo,
+    themeColor
   }
 };
 

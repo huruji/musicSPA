@@ -7,7 +7,7 @@ class ListContent extends Component{
       <div className="list-content">
         <table>
           <thead>
-          <tr>
+          <tr style={{borderTopColor: this.props.themeColor}}>
             <th>序号</th>
             <th>操作</th>
             <th>音乐标题</th>

@@ -188,7 +188,7 @@ table {
   float: left;
   width: 20%;
   height: 22px;
-  background: #A82828;
+  background: rgba(0, 0, 0, 0.1);
   padding: 0 32px 0 10px;
   border-radius: 16px;
   margin: 14px 0; }

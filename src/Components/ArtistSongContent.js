@@ -15,7 +15,7 @@ class ArtistSongContent extends Component{
           <p><Link to={`/albumsong/${this.props.albumid}`} style={{color:'#333',fontSize: '14px', lineHeight: '28px'}}>{this.props.title}</Link></p>
           <table>
             <thead>
-            <tr>
+            <tr style={{borderTopColor: this.props.themeColor}}>
               <th>序号</th>
               <th>操作</th>
               <th>音乐标题</th>

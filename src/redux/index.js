@@ -10,6 +10,7 @@ import ArtistInfo from './ArtistInfo';
 import ArtistSong from './ArtistSong';
 import ArtistAlbum from './AritstAlbum';
 import AlbumInfo from './AlbumInfo';
+import Setting from './Setting';
 
 import fetchJsonp from 'fetch-jsonp';
 import CONFIG from './../config';
@@ -28,7 +29,8 @@ const rootReducer = combineReducers({
   ArtistInfo,
   ArtistSong,
   ArtistAlbum,
-  AlbumInfo
+  AlbumInfo,
+  Setting
 });
 export const addSongToPlayList  = (song_id, loveSearchList) => {
   return (dispatch, getState) => {

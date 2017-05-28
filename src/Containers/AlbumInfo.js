@@ -30,9 +30,11 @@ class AlbumInfo extends Component{
 const mapStateToProps = (state) => {
   const albumInfo = state.AlbumInfo.albumInfo;
   const loveSearchList = state.AlbumInfo.songlist;
+  const themeColor = state.Setting.themes[state.Setting.curThemeIndex].color;
   return {
     albumInfo,
     loveSearchList,
+    themeColor
   }
 };
 

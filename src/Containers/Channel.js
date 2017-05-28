@@ -22,11 +22,11 @@ class ChannelContainer extends Component{
     }
   }
   render() {
-    let {name, avator_url, length, date, comment, song_list, action, loveSearchList} = this.props;
+    let {name, avator_url, length, date, comment, song_list, action, loveSearchList, themeColor} = this.props;
     return(
       <div>
-        <ListHeader url={avator_url} listName={name} listcnt={length} date={date} comment={comment} playAll={this.props.playAll}/>
-        <ListContent listContent={song_list } showDuration='table-cell' loveSearchList={loveSearchList}/>
+        <ListHeader url={avator_url} themeColor={themeColor} themelistName={name} listcnt={length} date={date} comment={comment} playAll={this.props.playAll}/>
+        <ListContent listContent={song_list } themeColor={themeColor} showDuration='table-cell' loveSearchList={loveSearchList}/>
       </div>
     )
   }
@@ -35,6 +35,7 @@ class ChannelContainer extends Component{
 const mapStateToProps = (state) => {
   const resiveMusic = state.ResiveMusic;
   const loveSearchList = state.ResiveMusic.song_list;
+  const themeColor = state.Setting.themes[state.Setting.curThemeIndex].color;
   return {
     avator_url: resiveMusic.avator_url,
     name: resiveMusic.name,
@@ -42,7 +43,8 @@ const mapStateToProps = (state) => {
     date: resiveMusic.date,
     comment: resiveMusic.comment,
     song_list: resiveMusic.song_list,
-    loveSearchList: loveSearchList
+    loveSearchList: loveSearchList,
+    themeColor
   }
 };
 

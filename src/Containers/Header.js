@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {fetchSearch} from '../redux/Search'
+import {updateCurTheme} from './../redux/Setting';
 
 class Header extends Component{
   constructor() {
@@ -10,6 +11,7 @@ class Header extends Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleSearchClick = this.handleSearchClick.bind(this);
     this.toggleThemeShow = this.toggleThemeShow.bind(this);
+    this.changeTheme = this.changeTheme.bind(this);
   }
   handleChange(event){
     this.setState({searchValue:event.target.value});
@@ -17,13 +19,19 @@ class Header extends Component{
   handleSearchClick(){
     this.props.fetchSearchSong(this.keyword.value);
   };
-
+  changeTheme(e){
+    e.stopPropagation();
+    console.log(121212);
+    console.log(e);
+    const index = e.target.getAttribute('data-index');
+    this.props.updateCurTheme(index);
+  }
   toggleThemeShow(){
     this.setState((prevState) => {return {themeShow: !prevState.themeShow}})
   }
   render(){
     return(
-      <div className="header clear-float">
+      <div className="header clear-float" style={{background: this.props.themes[this.props.curThemeIndex].color}}>
         <div className="logo">
           醉城音乐
         </div>
@@ -42,12 +50,11 @@ class Header extends Component{
             <i className="iconfont">&#xe635;</i>
             <div className="theme-container" style={{display:this.state.themeShow ? 'block' : 'none'}}>
               <ul className="clear-float">
-                <li><span>酷炫黑</span></li>
-                <li><span>官方红</span></li>
-                <li><span>可爱粉</span></li>
-                <li><span>天空蓝</span></li>
-                <li><span>清新绿</span></li>
-                <li><span>土豪金</span></li>
+                {
+                  this.props.themes.map((item, i) => {
+                    return (<li style={{backgroundColor: item.color}} key={i} data-index={i} onClick={this.changeTheme}><span>{item.intro}</span></li>)
+                })
+                }
               </ul>
             </div>
           </span>
@@ -59,11 +66,16 @@ class Header extends Component{
 }
 
 const mapStateToProps = (state) => {
-  return{}
+  const setting = state.Setting;
+  return{
+    themes: setting.themes,
+    curThemeIndex: setting.curThemeIndex
+  }
 };
 const mapDispatchToProps = (dispatch) => {
   return{
-    fetchSearchSong: (keyword) => dispatch(fetchSearch(keyword))
+    fetchSearchSong: (keyword) => dispatch(fetchSearch(keyword)),
+    updateCurTheme: (index) => dispatch(updateCurTheme(index))
   }
 };
 export default connect(mapStateToProps,mapDispatchToProps)(Header);

@@ -104,7 +104,7 @@ class MusicControl extends Component {
     }
   }
   render(){
-    let {play,volume,muted,curTime,totalTime} = this.props;
+    let {play,volume,muted,curTime,totalTime, themeColor} = this.props;
     const current = `${curTime / totalTime * 100}%`;
     muted = muted ? 'icon-novolume' : 'icon-volume';
     play = play ?'m-pause':'m-play';
@@ -116,16 +116,16 @@ class MusicControl extends Component {
           <source src={this.props.song_url}/>
         </audio>
         <div className="music-control">
-          <span className="m-icon m-prev music-prev" onClick={this.playPrev}/>
-          <span className={`m-icon music-play ${play}`} onClick={this.playShift}/>
-          <span className="m-icon m-next music-next" onClick={this.playNext}/>
+          <span className="m-icon m-prev music-prev" onClick={this.playPrev} style={{backgroundColor: themeColor}}/>
+          <span className={`m-icon music-play ${play}`} onClick={this.playShift} style={{backgroundColor: themeColor}}/>
+          <span className="m-icon m-next music-next" onClick={this.playNext} style={{backgroundColor: themeColor}}/>
         </div>
         <span className="music-curTime">{curTime}</span>
         <span className="music-totalTime">{totalTime}</span>
         <div className="music-volume">
           <span className={`${muted}`} onClick={this.changeMuted}></span>
           <div className="music-volumeBar" onClick={this.changeVolume}>
-            <div className="music-curVolume" style={{width: `${volume}%`}}>
+            <div className="music-curVolume" style={{width: `${volume}%`,backgroundColor: themeColor}}>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ class MusicControl extends Component {
         </div>
         <div className="music-timeline">
           <div className="music-lineContainer" onClick={this.changeTimeLine}>
-            <div className="music-playhead" style={{width:current}}></div>
+            <div className="music-playhead" style={{width:current, backgroundColor: themeColor}}></div>
           </div>
         </div>
       </div>
@@ -148,6 +148,7 @@ class MusicControl extends Component {
 const mapStateToProps = (state) => {
   const musicNow = state.MusicNow;
   const playList = state.PlayList;
+  const themeColor = state.Setting.themes[state.Setting.curThemeIndex].color;
   return {
     song_url: musicNow.song_url,
     play: musicNow.playFlag,
@@ -158,7 +159,8 @@ const mapStateToProps = (state) => {
     song_id: musicNow.song_id,
     newSong: musicNow.newSong,
     show: musicNow.playListShow,
-    songCount: playList.song_list.length
+    songCount: playList.song_list.length,
+    themeColor
   }
 };
 

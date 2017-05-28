@@ -18,7 +18,7 @@ class Search extends Component{
           <div className="search-header">
             {searchInfo}
           </div>
-          <ListContent listContent={this.props.songList} showDuration="none" loveSearchList={this.props.loveSearchList}/>
+          <ListContent listContent={this.props.songList} themeColor={this.props.themeColor} showDuration="none" loveSearchList={this.props.loveSearchList}/>
         </div>
     )
   }
@@ -26,10 +26,12 @@ class Search extends Component{
 
 const mapStateToProps = (state) => {
   const searchList = state.SearchList;
+  const themeColor = state.Setting.themes[state.Setting.curThemeIndex].color;
   return{
       songList:searchList.searchSongList,
       keyword: searchList.searchKeyword,
-      loveSearchList: searchList.searchSongList
+      loveSearchList: searchList.searchSongList,
+      themeColor
   }
 };
 const mapDispatchToProps = (dispatch) => {

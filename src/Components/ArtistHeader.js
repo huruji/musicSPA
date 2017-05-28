@@ -9,7 +9,7 @@ class ArtistHeader extends Component{
           </div>
           <div className="artist-header-info">
             <div className="artist-header-info-name">
-              <p><span>歌手</span>{this.props.name}</p>
+              <p><span style={{backgroundColor: this.props.themeColor}}>歌手</span>{this.props.name}</p>
               <p>{this.props.aliasname}</p>
             </div>
             <ul className="artist-header-info-song">
