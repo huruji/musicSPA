@@ -10,7 +10,7 @@ class AlbumHeader extends Component{
           </div>
           <div className="artist-header-info">
             <div className="artist-header-info-name">
-              <p><span>专辑</span>{this.props.albumInfo.title}</p>
+              <p><span style={{backgroundColor: this.props.themeColor}}>专辑</span>{this.props.albumInfo.title}</p>
             </div>
             <ul className="artist-header-info-song">
               <li>
