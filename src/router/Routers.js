@@ -9,6 +9,7 @@ import ArtistInfo from './../Containers/ArtistInfo';
 import AlbumSong from './../Containers/AlbumSong';
 import AlbumInfo from './../Containers/AlbumInfo';
 import Category from './../Containers/Category';
+import CategorySong from './../Containers/CategorySong';
 
 class Routers extends Component{
   render(){
@@ -23,6 +24,7 @@ class Routers extends Component{
           <Route path="/artistinfo/:tinguid" component={ArtistInfo}/>
           <Route path="/albumsong/:albumid" component={AlbumSong}/>
           <Route path="/albuminfo/:albumid" component={AlbumInfo}/>
+          <Route path="/categorysong/:catename" component={CategorySong}/>
         </Switch>
       </div>
     )

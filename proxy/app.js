@@ -33,7 +33,13 @@ app.use('/', function(req,res,next){
 	  var file = dir + '/' + req.url.match(/\w*\.mp3/)[0];
     fsExtra.mkdirsSync(dir);
 	  request(url).pipe(fs.createWriteStream(file, {flags: 'w+'}));
-  } else{
+  } else if(url.indexOf('a.hiphotos.baidu.com') >= 0){
+	  console.log(url);
+      var dir = './public' + req.url.match(/(^\/(\w*\/)*)/g)[0].replace(/\/$/,'');
+      var file = dir + '/' + req.url.match(/\w*\.jpg/)[0];
+      fsExtra.mkdirsSync(dir);
+      request(url).pipe(fs.createWriteStream(file, {flags: 'w+'}));
+    } else{
     request(url, function(error, response, body){
       res.set(response.headers);
       console.log(body);

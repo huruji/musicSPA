@@ -20,22 +20,24 @@ const Category = (state, action) => {
   }
 };
 
-const updateCategory = (public, artist) => {
+const updateCategory = (publicList, artistList) => {
   return {
     type: UPDATECATEGORY,
-    public,
-    artist
+    public: publicList,
+    artist: artistList
   }
 };
 
 export const fetchCategory = () => {
   return (dispatch, getState) => {
-    const url = `${CONFIG.baseUrl}?${CONFIG.categoryList}`;
+    const url = `${CONFIG.originHost}?${CONFIG.categoryList}`;
+    console.log(url);
     fetchJsonp(url)
         .then(response => response.json())
         .then(json => {
-          const publicList = json.result[0];
-          const artist = json.result[1];
+          console.log(json);
+          const publicList = json.result[0].channellist;
+          const artist = json.result[1].channellist;
           dispatch(updateCategory(publicList, artist));
         })
   }
