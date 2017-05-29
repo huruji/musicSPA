@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import ListContent from '../Components/ListContent';
+import SearchArtist from './../Components/SearchArtist';
+import PleaseSearch from './../Components/PleaseSearch';
 
 class Search extends Component{
   constructor(){
@@ -13,12 +15,22 @@ class Search extends Component{
     if(this.props.keyword){
       searchInfo = <div>搜索 <span>&quot;{this.props.keyword}&quot;</span>，找到 {this.props.songList.length} 首单曲</div>
     }
+    let searchArtist = null, listContent = null;
+    if(this.props.searchInfo.is_artist || this.props.searchInfo.is_album){
+      searchArtist = <SearchArtist {...this.props.searchInfo}/>
+    }
+    if(this.props.searchInfo.song_list.length > 0) {
+      listContent = <ListContent listContent={this.props.songList} themeColor={this.props.themeColor} showDuration="none" loveSearchList={this.props.loveSearchList}/>
+    } else {
+      listContent = <PleaseSearch/>
+    }
     return(
         <div>
           <div className="search-header">
             {searchInfo}
           </div>
-          <ListContent listContent={this.props.songList} themeColor={this.props.themeColor} showDuration="none" loveSearchList={this.props.loveSearchList}/>
+          {searchArtist}
+          {listContent}
         </div>
     )
   }
@@ -27,10 +39,12 @@ class Search extends Component{
 const mapStateToProps = (state) => {
   const searchList = state.SearchList;
   const themeColor = state.Setting.themes[state.Setting.curThemeIndex].color;
+  console.log(searchList);
   return{
-      songList:searchList.searchSongList,
+      songList:searchList.searchInfo.song_list,
       keyword: searchList.searchKeyword,
-      loveSearchList: searchList.searchSongList,
+      searchInfo: searchList.searchInfo,
+      loveSearchList: searchList.searchInfo.song_list,
       themeColor
   }
 };

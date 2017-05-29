@@ -12,6 +12,7 @@ class Header extends Component{
     this.handleSearchClick = this.handleSearchClick.bind(this);
     this.toggleThemeShow = this.toggleThemeShow.bind(this);
     this.changeTheme = this.changeTheme.bind(this);
+    this.shiftMaxed = this.shiftMaxed.bind(this);
   }
   handleChange(event){
     this.setState({searchValue:event.target.value});
@@ -25,6 +26,16 @@ class Header extends Component{
     console.log(e);
     const index = e.target.getAttribute('data-index');
     this.props.updateCurTheme(index);
+  }
+  shiftMaxed(){
+    /*const event = document.createEvent('Events');
+    event.initEvent('keydown', true, true);
+    event.view = document.defaultView;
+    event.altKey = false;
+    event.ctrlKey = false;
+    event.shiftKey = false;
+    event.keyCode = 122;
+    window.dispatchEvent(event);*/
   }
   toggleThemeShow(){
     this.setState((prevState) => {return {themeShow: !prevState.themeShow}})
@@ -58,7 +69,7 @@ class Header extends Component{
               </ul>
             </div>
           </span>
-          <span><i className="iconfont">&#xe65c;</i></span>
+          <span onClick={this.shiftMaxed}><i className="iconfont">&#xe65c;</i></span>
         </div>
       </div>
     )

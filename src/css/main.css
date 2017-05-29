@@ -909,6 +909,39 @@ table {
   float: right;
   color: #0C73C2; }
 
+.search-artist-container-title {
+  color: #666;
+  border-top: 1px solid #E1E1E2;
+  border-bottom: 1px solid #E1E1E2;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  padding: 0 20px; }
+
+.search-artist-container-items {
+  padding: 0 20px;
+  margin-top: 20px; }
+
+.search-artist-item img {
+  float: left;
+  width: 48px; }
+
+.search-artist-item {
+  min-width: 200px;
+  height: 48px;
+  padding: 10px;
+  display: inline-block;
+  margin-right: 20px;
+  border: 1px solid #E1E1E2;
+  border-radius: 3px; }
+
+.search-artist-item h6 {
+  color: #666;
+  display: inline-block;
+  margin-left: 10px;
+  line-height: 48px;
+  font-size: 15px; }
+
 .recommand-container {
   margin: 100px 50px 0; }
 

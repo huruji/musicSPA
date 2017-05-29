@@ -24,6 +24,12 @@ class ListCell extends Component{
   render() {
 
     const {seq, title, author, album_title, showDuration, file_duration, heartColor} = this.props;
+    let artistSong = null;
+    if(this.props.ting_uid){
+      artistSong = <td><Link to={`/artistsong/${this.props.ting_uid}`} dangerouslySetInnerHTML={{__html: author}}></Link></td>
+    } else{
+      artistSong = <td dangerouslySetInnerHTML={{__html: author}}></td>
+    }
     return(
       <tr className="cell" onDoubleClick={this.play}>
         <td style={{textAlign:"right"}}>{seq}</td>
@@ -32,8 +38,8 @@ class ListCell extends Component{
           <span className="cell-add" onClick={this.addPlayList}>+</span>
         </td>
         <td dangerouslySetInnerHTML={{__html: title}}></td>
-        <td><Link to={`/artistsong/${this.props.ting_uid}`} dangerouslySetInnerHTML={{__html: author}}></Link></td>
-        <td><Link to={`/artistsong/${this.props.album_id}`} dangerouslySetInnerHTML={{__html:album_title}}></Link></td>
+        {artistSong}
+        <td><Link to={`/albumsong/${this.props.album_id}`} dangerouslySetInnerHTML={{__html:album_title}}></Link></td>
         <td style={{display: showDuration}}> {file_duration} </td>
       </tr>
     )

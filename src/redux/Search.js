@@ -6,8 +6,8 @@ const RECEIVESEARCH = 'RECEIVESEARCH';
 
 
 const initialState = {
-  searchSongList: [],
-  searchKeyword: '',
+  searchInfo: {song_list: [], album: {}, artist:{}},
+  searchKeyword: ''
 };
 const SearchList = (state=initialState, action) => {
   if(!state){
@@ -15,17 +15,17 @@ const SearchList = (state=initialState, action) => {
   }
   switch (action.type) {
     case RECEIVESEARCH:
-      return {...state, searchKeyword: action.keyword, searchSongList: action.songList};
+      return {searchKeyword: action.searchKeyword, searchInfo: action.searchInfo};
     default:
       return state;
   }
 };
 
-export const receiveSearch = (keyword, songList) => {
+export const receiveSearch = (keyword, json) => {
   return {
     type: RECEIVESEARCH,
-    keyword: keyword,
-    songList: songList
+    searchInfo: json,
+    searchKeyword: keyword
   }
 };
 
@@ -38,8 +38,7 @@ export const fetchSearch = (keyword) => {
         .then(response => response.json())
         .then(json => {
           console.log(json);
-          const SongList = json.song_list;
-          dispatch(receiveSearch(keyword, SongList));
+          dispatch(receiveSearch(keyword, json));
         })
   }
 };
