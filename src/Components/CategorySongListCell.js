@@ -2,9 +2,8 @@ import React,{ Component } from 'react';
 import {duration} from '../utils/time';
 import {connect} from 'react-redux';
 import {fetchAddPlaySong, loveShift, addSongToPlayList} from './../redux';
-import {Link} from 'react-router-dom';
 
-class ListCell extends Component{
+class CategorySongListCell extends Component{
   constructor(){
     super();
     this.play = this.play.bind(this);
@@ -15,33 +14,23 @@ class ListCell extends Component{
     this.props.play(this.props.song_id, this.props.loveSearchList);
   }
   loveShift() {
-
     this.props.loveShift(this.props.song_id, this.props.loveSearchList);
   }
   addPlayList() {
     this.props.addPlayList(this.props.song_id, this.props.loveSearchList);
   }
   render() {
-
-    const {seq, title, author, album_title, showDuration, file_duration, heartColor, ting_uid, album_id} = this.props;
-    let artistSong = null;
-    if(this.props.ting_uid){
-      artistSong = <td><Link to={`/artistsong/${ting_uid}`} dangerouslySetInnerHTML={{__html: author}}></Link></td>
-    } else{
-      artistSong = <td dangerouslySetInnerHTML={{__html: author}}></td>
-    }
+    const {seq, title, author, album_title, showDuration, file_duration, heartColor} = this.props;
     return(
-      <tr className="cell" onDoubleClick={this.play}>
-        <td style={{textAlign:"right"}}>{seq}</td>
-        <td>
-          <span className="m-icon m-heart" style={{color: heartColor}} onClick={this.loveShift}/>
-          <span className="cell-add" onClick={this.addPlayList}>+</span>
-        </td>
-        <td dangerouslySetInnerHTML={{__html: title}}></td>
-        {artistSong}
-        <td><Link to={`/albumsong/${album_id}`} dangerouslySetInnerHTML={{__html:album_title}}></Link></td>
-        <td style={{display: showDuration}}> {file_duration} </td>
-      </tr>
+        <tr className="cell" onDoubleClick={this.play}>
+          <td style={{textAlign:"right"}}>{seq}</td>
+          <td>
+            <span className="m-icon m-heart" style={{color: heartColor}} onClick={this.loveShift}/>
+            <span className="cell-add" onClick={this.addPlayList}>+</span>
+          </td>
+          <td dangerouslySetInnerHTML={{__html: title}}></td>
+          <td style={{display: showDuration}}> {file_duration} </td>
+        </tr>
     )
   }
 }
@@ -58,4 +47,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateTOProps, mapDispatchToProps)(ListCell);
+export default connect(mapStateTOProps, mapDispatchToProps)(CategorySongListCell);

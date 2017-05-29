@@ -11,12 +11,13 @@ class Recommand extends Component{
   }
 
   render(){
+    const {recommandList} = {...this.props};
     return (
         <div className="recommand-container">
           <p className="recommand-title">推荐歌曲</p>
           <ul className="clear-float">
             {
-              this.props.recommandList.map((item,i) => {
+              recommandList.map((item,i) => {
                 return (
                     <RecommandItem key={i} song={item}  fetchAddPlaySong={this.fetchAddPlaySong}/>
                 )

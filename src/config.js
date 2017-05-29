@@ -14,7 +14,7 @@ const CONFIG = {
   artistAlbum: 'method=baidu.ting.artist.getAlbumList&order=1&tinguid=',
   albumSong: 'method=baidu.ting.album.getAlbumInfo&album_id=',
   categoryList: 'method=baidu.ting.radio.getCategoryList&from=qianqian&version=5.1.0',
-  categorySong: 'method=baidu.ting.radio.getChannelSong&format=json&pn=0&rn=100&channelname='
+  categorySong: 'method=baidu.ting.radio.getChannelSong&format=json&pn=0&rn=100&from=qianqian&version=2.1.0&channelname='
 };
 
 export default CONFIG;

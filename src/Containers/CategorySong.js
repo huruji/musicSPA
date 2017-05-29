@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import CategorySongHeader from '../Components/CategorySongHeader';
-import {fetchCategory} from './../redux/Category';
+import {fetchCategorySong} from './../redux/CategorySong';
 import CONFIG from './../config';
+import ListContent from './../Components/ListContent';
 
 class CategorySong extends Component{
   constructor(){
@@ -10,25 +11,25 @@ class CategorySong extends Component{
   }
   componentDidMount(){
     console.log(111);
-    this.props.fetchCategory();
+    this.props.fetchCategorySong(this.props.match.params.catename);
   }
   render() {
-    const {publicList, artistList} = this.props;
+    const {loveSearchList, themeColor} = {...this.props};
     return(
         <div>
           <CategorySongHeader/>
-          <ListContent listContent={this.props.loveSearchList } themeColor={this.props.themeColor} showDuration='table-cell' loveSearchList={this.props.loveSearchList}/>
+          <ListContent listContent={loveSearchList } themeColor={themeColor} showDuration='table-cell' loveSearchList={loveSearchList}/>
         </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  const albumInfo = state.AlbumInfo.albumInfo;
-  const loveSearchList = state.AlbumInfo.songlist;
+  const title = state.CategorySong.title;
+  const loveSearchList = state.CategorySong.songList;
   const themeColor = state.Setting.themes[state.Setting.curThemeIndex].color;
   return {
-    albumInfo,
+    title,
     loveSearchList,
     themeColor
   }
@@ -36,7 +37,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAlbumInfo: (albumid) => dispatch(fetchAlbumInfo(albumid))
+    fetchCategorySong: (name) => dispatch(fetchCategorySong(name))
   }
 };
 

@@ -20,6 +20,7 @@ class Category extends Component{
           <ul className="clear-float">
             {
               publicList.map((item, i) => {
+                console.log(item);
                 return <CategoryItem key={i} src={`/categorysong/${item.ch_name}`} img={'http://musicugc.cdn.qianqian.com/ugcdiy/pic/535ce598ebc9dbd1212a7cdb56060e38.jpg'} title={`${item.cate_sname}:${item.name}`}/>
               })
 

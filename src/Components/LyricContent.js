@@ -8,8 +8,9 @@ class LyricContent extends Component {
     super();
   }
   render(){
-    const lis = this.props.lyricContent.map((item,i) =>{
-      if(this.props.curTime > this.props.lyricTime[i] && this.props.curTime < this.props.lyricTime[i+1]){
+    const {lyricContent, curTime, lyricTime, } = {...this.props};
+    const lis = lyricContent.map((item,i) =>{
+      if(curTime > lyricTime[i] && curTime < lyricTime[i+1]){
         if(this.lyric){
           const scrollTop = this.lyric.scrollTop;
           if(scrollTop < (i-5)*30){

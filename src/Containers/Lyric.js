@@ -34,16 +34,17 @@ class Lyric extends Component{
     }
   }
   render() {
+    const {pic_big, playFlag, title, album_title, author, lrclink, lyricContent, lyricTime, curTime, recommandList} = {...this.props};
     return(
       <div className="lyric clear-float">
         <div className="clear-float">
-          <LyricImg pic_big={this.props.pic_big} playFlag={this.props.playFlag}/>
+          <LyricImg pic_big={pic_big} playFlag={playFlag}/>
           <div className="lyric-container">
-            <LyricInfo title={this.props.title} album_title={this.props.album_title} author={this.props.author}/>
-            <LyricContent lrclink={this.props.lrclink} lyricContent={this.props.lyricContent} lyricTime={this.props.lyricTime} curTime={this.props.curTime}/>
+            <LyricInfo title={title} album_title={album_title} author={author}/>
+            <LyricContent lrclink={lrclink} lyricContent={lyricContent} lyricTime={lyricTime} curTime={curTime}/>
           </div>
         </div>
-        <Recommand recommandList={this.props.recommandList} fetchAddPlaySong={this.fetchAddPlaySong}/>
+        <Recommand recommandList={recommandList} fetchAddPlaySong={this.fetchAddPlaySong}/>
       </div>
     )
   }

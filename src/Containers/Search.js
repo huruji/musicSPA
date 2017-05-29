@@ -12,7 +12,8 @@ class Search extends Component{
     console.log('search');
     console.log(this.props);
     let searchInfo = null;
-    if(this.props.keyword){
+    const {keyword, songList} = {...this.props};
+    if(keyword){
       searchInfo = <div>搜索 <span>&quot;{this.props.keyword}&quot;</span>，找到 {this.props.songList.length} 首单曲</div>
     }
     let searchArtist = null, listContent = null;

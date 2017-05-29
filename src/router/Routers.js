@@ -16,7 +16,7 @@ class Routers extends Component{
     return(
       <div>
         <Switch style={{height: '100%'}}>
-          <Route exact path="/" component={Category}/>
+          <Route exact path="/" component={Search}/>
           <Route exact path="/search" component={Search}/>
           <Route path="/channel/:id" component={ChannelContainer}/>
           <Route path="/lyric" component={Lyric}/>

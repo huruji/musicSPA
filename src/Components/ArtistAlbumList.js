@@ -6,11 +6,12 @@ class ArtistAlbumList extends Component{
     if(!this.props.list){
       return null;
     }
+    const {showDuration, loveSearchList} = {...this.props};
     return(
         <tbody>
         {
           this.props.list.map((item, index) => (
-              <ArtistAlbumListCell key={index} seq={index + 1} {...item} showDuration={this.props.showDuration} loveSearchList={this.props.loveSearchList}/>
+              <ArtistAlbumListCell key={index} seq={index + 1} {...item} showDuration={showDuration} loveSearchList={loveSearchList}/>
           ))
         }
         </tbody>

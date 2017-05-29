@@ -6,24 +6,25 @@ class ArtistIntro extends Component{
   }
 
   render(){
-    let intro = [], works=[], achievements = [];
-    if(this.props.intro){
-      const infoArr = this.props.intro.split('\n\n');
-      const indexWorks = this.props.intro.indexOf('代表作品\n');
-      const indexAchi = this.props.intro.indexOf('主要成就\n');
-      intro = this.props.intro.substring(0, indexWorks).split('\n');
-      works = this.props.intro.substring(indexWorks, indexAchi).split('\n');
-      achievements = this.props.intro.substring(indexAchi).split('\n');
+    const {intro, birth, country, company, } = {...this.props};
+    let introContent = [], works=[], achievements = [];
+    if(intro){
+      const infoArr = intro.split('\n\n');
+      const indexWorks = intro.indexOf('代表作品\n');
+      const indexAchi = intro.indexOf('主要成就\n');
+      introContent = intro.substring(0, indexWorks).split('\n');
+      works = intro.substring(indexWorks, indexAchi).split('\n');
+      achievements = intro.substring(indexAchi).split('\n');
     }
 
     return(
         <div className="artist-intro">
-          <p><b>出生日期：</b>{this.props.birth}</p>
-          <p><b>国家(地区)：</b>{this.props.country}</p>
-          <p><b>所属公司：</b>{this.props.company}</p>
+          <p><b>出生日期：</b>{birth}</p>
+          <p><b>国家(地区)：</b>{country}</p>
+          <p><b>所属公司：</b>{company}</p>
           <p><b>个人简介：</b></p>
           {
-            intro.map((item, i) => {
+            introContent.map((item, i) => {
               if(i > 0){
                 return (<p key={i}>{item}</p>)
               }

@@ -2,22 +2,23 @@ import React,{Component} from 'react';
 
 class AlbumHeader extends Component{
   render(){
-    console.log(this.props);
+    const {pic_big, title, author, publishtime} = {...this.props.albumInfo};
+    const themeColor = this.props.themeColor;
     return(
         <div className="artist-header clear-float">
           <div className="artist-header-img">
-            <img src={this.props.albumInfo.pic_big} alt=""/>
+            <img src={pic_big} alt=""/>
           </div>
           <div className="artist-header-info">
             <div className="artist-header-info-name">
-              <p><span style={{backgroundColor: this.props.themeColor}}>专辑</span>{this.props.albumInfo.title}</p>
+              <p><span style={{backgroundColor: themeColor}}>专辑</span>{title}</p>
             </div>
             <ul className="artist-header-info-song">
               <li>
-                歌手：{this.props.albumInfo.author}
+                歌手：{author}
               </li>
               <li>
-                时间：{this.props.albumInfo.publishtime}
+                时间：{publishtime}
               </li>
             </ul>
           </div>

@@ -3,14 +3,15 @@ import ListCell from './ListCell';
 
 class ListCellView extends Component{
   render() {
-    if(!this.props.list){
+    const {list, showDuration, loveSearchList} = {...this.props};
+    if(!list){
       return null;
     }
     return(
       <tbody>
       {
         this.props.list.map((item, index) => (
-          <ListCell key={index} seq={index + 1} {...item} showDuration={this.props.showDuration} loveSearchList={this.props.loveSearchList}/>
+          <ListCell key={index} seq={index + 1} {...item} showDuration={showDuration} loveSearchList={loveSearchList}/>
           ))
       }
       </tbody>

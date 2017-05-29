@@ -24,18 +24,19 @@ class ArtistSong extends Component{
   render(){
     console.log('match');
     console.log(this.props);
+    const {themeColor, artistInfo, match, artistAlbumInfo} = {...this.props};
     return(
         <div>
-          <ArtistHeader {...this.props.artistInfo} themeColor={this.props.themeColor}/>
-          <ul className="artist-navbar clear-float" style={{borderBottomColor: this.props.themeColor}}>
-            <li className="artist-navbar-item"><NavLink to={`/artistsong/${this.props.match.params.tinguid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: this.props.themeColor}}>专辑</NavLink></li>
-            <li className="artist-navbar-item"><NavLink to={`/artistinfo/${this.props.match.params.tinguid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: this.props.themeColor}}>歌手详情</NavLink></li>
+          <ArtistHeader {...artistInfo} themeColor={themeColor}/>
+          <ul className="artist-navbar clear-float" style={{borderBottomColor: themeColor}}>
+            <li className="artist-navbar-item"><NavLink to={`/artistsong/${match.params.tinguid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: themeColor}}>专辑</NavLink></li>
+            <li className="artist-navbar-item"><NavLink to={`/artistinfo/${match.params.tinguid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: themeColor}}>歌手详情</NavLink></li>
           </ul>
           {
-            this.props.artistAlbumInfo.map((item,index) => {
+            artistAlbumInfo.map((item,index) => {
               console.log(item);
               return (
-                  <ArtistSongContent key={index}  themeColor={this.props.themeColor} listContent={item.songlist} showDuration='table-cell' albumimg={item.albumInfo ? item.albumInfo.pic_big : ''} albumid={item.albumInfo ? item.albumInfo.album_id : ''} publishtime={item.albumInfo ? item.albumInfo.publishtime : ''} title={item.albumInfo ? item.albumInfo.title : ''}  loveSearchList={item.songlist}/>
+                  <ArtistSongContent key={index}  themeColor={themeColor} listContent={item.songlist} showDuration='table-cell' albumimg={item.albumInfo ? item.albumInfo.pic_big : ''} albumid={item.albumInfo ? item.albumInfo.album_id : ''} publishtime={item.albumInfo ? item.albumInfo.publishtime : ''} title={item.albumInfo ? item.albumInfo.title : ''}  loveSearchList={item.songlist}/>
               )
             })
           }

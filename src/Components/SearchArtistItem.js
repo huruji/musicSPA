@@ -6,11 +6,12 @@ class SearchArtistItem extends Component{
     super();
   }
   render() {
+    const {src, img, title} = {...this.props};
     return (
-        <Link to={this.props.src}>
+        <Link to={src}>
           <div className="search-artist-item">
-            <img src={this.props.img} alt=""/>
-            <h6>{this.props.title}</h6>
+            <img src={img} alt=""/>
+            <h6>{title}</h6>
           </div>
         </Link>
     )

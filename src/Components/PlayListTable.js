@@ -10,14 +10,15 @@ class PlayListTable extends Component {
     this.props.playSong(this.props.song_id);
   }
   render(){
+    const {title, author, file_duration} = {...this.props};
     return (
       <tr className="cell" onClick={this.playSong}>
         <td>
           <span ></span>
-          {this.props.title}
+          {title}
         </td>
-        <td>{this.props.author}</td>
-        <td>{duration(this.props.file_duration)}</td>
+        <td>{author}</td>
+        <td>{duration(file_duration)}</td>
       </tr>
     );
   }

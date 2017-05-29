@@ -104,7 +104,7 @@ class MusicControl extends Component {
     }
   }
   render(){
-    let {play,volume,muted,curTime,totalTime, themeColor} = this.props;
+    let {play,volume,muted,curTime,totalTime, themeColor, songCount} = this.props;
     const current = `${curTime / totalTime * 100}%`;
     muted = muted ? 'icon-novolume' : 'icon-volume';
     play = play ?'m-pause':'m-play';
@@ -133,7 +133,7 @@ class MusicControl extends Component {
           <span className={`m-icon`}></span>
         </div>
         <div className="music-listicon" onClick={this.playListShow}>
-          <div className="music-listcnt">{this.props.songCount}</div>
+          <div className="music-listcnt">{songCount}</div>
         </div>
         <div className="music-timeline">
           <div className="music-lineContainer" onClick={this.changeTimeLine}>

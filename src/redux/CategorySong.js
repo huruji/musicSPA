@@ -23,6 +23,7 @@ const CategorySong = (state, action) => {
 
 const updateCategorySong = (title, songList) => {
   return {
+    type: UPDATECATEGORYSONG,
     title,
     songList
   }
@@ -31,12 +32,16 @@ const updateCategorySong = (title, songList) => {
 export const fetchCategorySong = (name) => {
   return (dispatch, getState) => {
     const url = `${CONFIG.baseUrl}?${CONFIG.categorySong}${name}`;
+
     fetchJsonp(url)
         .then(res => res.json())
         .then(json => {
+          console.log('2afsd');
+          console.log(url);
+          console.log(json);
           const title = json.result.channel;
           const songList = json.result.songlist;
-          dispatch(title, songList);
+          dispatch(updateCategorySong(title, songList));
         })
   }
 };

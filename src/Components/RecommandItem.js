@@ -10,10 +10,11 @@ class RecommandItem extends Component{
   }
 
   render(){
+    const {song} = {...this.props};
     return (
         <li onClick={this.fetchAddPlaySong}>
-          <img src={this.props.song.pic_small} alt=""/>
-          <p>{this.props.song.author}-{this.props.song.title}</p>
+          <img src={song.pic_small} alt=""/>
+          <p>{song.author}-{song.title}</p>
         </li>
     )
   }

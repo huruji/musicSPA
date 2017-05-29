@@ -38,8 +38,9 @@ class Header extends Component{
   componentDidMount(){
   }
   render(){
+    const {themes, curThemeIndex, } = {...this.props};
     return(
-      <div className="header clear-float" style={{background: this.props.themes[this.props.curThemeIndex].color}}>
+      <div className="header clear-float" style={{background: themes[curThemeIndex].color}}>
         <div className="logo">
           醉城音乐
         </div>
@@ -59,7 +60,7 @@ class Header extends Component{
             <div className="theme-container" style={{display:this.state.themeShow ? 'block' : 'none'}}  onClick={(e) => e.stopPropagation()}>
               <ul className="clear-float">
                 {
-                  this.props.themes.map((item, i) => {
+                  themes.map((item, i) => {
                     return (<li style={{backgroundColor: item.color}} key={i} data-index={i} onClick={this.changeTheme}><span>{item.intro}</span></li>)
                 })
                 }

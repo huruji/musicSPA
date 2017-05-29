@@ -13,14 +13,15 @@ class AlbumSong extends Component{
     this.props.fetchAlbumInfo(this.props.match.params.albumid);
   }
   render() {
+    const {albumInfo, themeColor, match, loveSearchList} = {...this.props};
     return(
         <div>
-          <AlbumHeader albumInfo={this.props.albumInfo} themeColor={this.props.themeColor}/>
-          <ul className="artist-navbar clear-float" style={{borderBottomColor: this.props.themeColor}}>
-            <li className="artist-navbar-item"><NavLink to={`/albumsong/${this.props.match.params.albumid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: this.props.themeColor}}>歌曲列表</NavLink></li>
-            <li className="artist-navbar-item"><NavLink to={`/albuminfo/${this.props.match.params.albumid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: this.props.themeColor}}>专辑详情</NavLink></li>
+          <AlbumHeader albumInfo={albumInfo} themeColor={themeColor}/>
+          <ul className="artist-navbar clear-float" style={{borderBottomColor: themeColor}}>
+            <li className="artist-navbar-item"><NavLink to={`/albumsong/${match.params.albumid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: themeColor}}>歌曲列表</NavLink></li>
+            <li className="artist-navbar-item"><NavLink to={`/albuminfo/${match.params.albumid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: themeColor}}>专辑详情</NavLink></li>
           </ul>
-          <ListContent listContent={this.props.loveSearchList } themeColor={this.props.themeColor} showDuration='table-cell' loveSearchList={this.props.loveSearchList}/>
+          <ListContent listContent={loveSearchList } themeColor={themeColor} showDuration='table-cell' loveSearchList={loveSearchList}/>
         </div>
         )
   }

@@ -8,18 +8,19 @@ class PlayListPanel extends Component {
     super();
   }
   render(){
-    const Table = this.props.songList.map((item, index) => {
+    const {songList, playSong, show, length} = {...this.props};
+    const Table = songList.map((item, index) => {
       return (
-        <PlayListTable {...item} key={index} seq={index + 1} playSong={this.props.playSong}/>
+        <PlayListTable {...item} key={index} seq={index + 1} playSong={playSong}/>
       )
     });
     console.log('this.props.songlist');
-    console.log(this.props.songList);
+    console.log(songList);
     return(
-      <div className="playlist" style={{display:this.props.show}}>
+      <div className="playlist" style={{display:show}}>
         <div className="playlist-type">播放列表</div>
         <div className="playlist-info">
-          <span className="playlist-cnt">总{this.props.length}首</span>
+          <span className="playlist-cnt">总{length}首</span>
           <span className="playlist-clearall" >清空</span>
           <span className="playlist-separator">|</span>
           <span className="playlist-loveall" >收藏全部</span>

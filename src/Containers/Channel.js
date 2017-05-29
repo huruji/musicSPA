@@ -22,10 +22,10 @@ class ChannelContainer extends Component{
     }
   }
   render() {
-    let {name, avator_url, length, date, comment, song_list, action, loveSearchList, themeColor} = this.props;
+    let {name, avator_url, length, date, comment, song_list, action, playAll, loveSearchList, themeColor} = this.props;
     return(
       <div>
-        <ListHeader url={avator_url} themeColor={themeColor} themelistName={name} listcnt={length} date={date} comment={comment} playAll={this.props.playAll}/>
+        <ListHeader url={avator_url} themeColor={themeColor} themelistName={name} listcnt={length} date={date} comment={comment} playAll={playAll}/>
         <ListContent listContent={song_list } themeColor={themeColor} showDuration='table-cell' loveSearchList={loveSearchList}/>
       </div>
     )

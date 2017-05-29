@@ -14,14 +14,15 @@ class AlbumInfo extends Component{
   }
 
   render(){
+    const {albumInfo, themeColor, match} = {...this.props};
     return(
         <div>
-          <AlbumHeader albumInfo={this.props.albumInfo} themeColor={this.props.themeColor}/>
-          <ul className="artist-navbar clear-float" style={{borderBottomColor: this.props.themeColor}}>
-            <li className="artist-navbar-item"><NavLink to={`/albumsong/${this.props.match.params.albumid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: this.props.themeColor}}>歌曲列表</NavLink></li>
-            <li className="artist-navbar-item"><NavLink to={`/albuminfo/${this.props.match.params.albumid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: this.props.themeColor}}>专辑详情</NavLink></li>
+          <AlbumHeader albumInfo={albumInfo} themeColor={themeColor}/>
+          <ul className="artist-navbar clear-float" style={{borderBottomColor: themeColor}}>
+            <li className="artist-navbar-item"><NavLink to={`/albumsong/${match.params.albumid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: this.props.themeColor}}>歌曲列表</NavLink></li>
+            <li className="artist-navbar-item"><NavLink to={`/albuminfo/${match.params.albumid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: this.props.themeColor}}>专辑详情</NavLink></li>
           </ul>
-          <AlbumIntro {...this.props.albumInfo}/>
+          <AlbumIntro {...albumInfo}/>
         </div>
     )
   }
