@@ -28,17 +28,14 @@ class Header extends Component{
     this.props.updateCurTheme(index);
   }
   shiftMaxed(){
-    /*const event = document.createEvent('Events');
-    event.initEvent('keydown', true, true);
-    event.view = document.defaultView;
-    event.altKey = false;
-    event.ctrlKey = false;
-    event.shiftKey = false;
-    event.keyCode = 122;
-    window.dispatchEvent(event);*/
   }
-  toggleThemeShow(){
+  toggleThemeShow(e){
+    e.stopPropagation();
+    e.cancelBubble= true;
+    console.log(1231232);
     this.setState((prevState) => {return {themeShow: !prevState.themeShow}})
+  }
+  componentDidMount(){
   }
   render(){
     return(
@@ -57,9 +54,9 @@ class Header extends Component{
           <Link to='/search' className="searchBtn" onClick={this.handleSearchClick}/>
         </div>
         <div className="setting-area" style={{position:'relative'}}>
-          <span onClick={this.toggleThemeShow}>
+          <span onClick={this.toggleThemeShow} ref={(theme) => this.theme = theme}>
             <i className="iconfont">&#xe635;</i>
-            <div className="theme-container" style={{display:this.state.themeShow ? 'block' : 'none'}}>
+            <div className="theme-container" style={{display:this.state.themeShow ? 'block' : 'none'}}  onClick={(e) => e.stopPropagation()}>
               <ul className="clear-float">
                 {
                   this.props.themes.map((item, i) => {

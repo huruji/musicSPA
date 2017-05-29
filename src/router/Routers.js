@@ -8,13 +8,14 @@ import ArtistSong from './../Containers/ArtistSong';
 import ArtistInfo from './../Containers/ArtistInfo';
 import AlbumSong from './../Containers/AlbumSong';
 import AlbumInfo from './../Containers/AlbumInfo';
+import Category from './../Containers/Category';
 
 class Routers extends Component{
   render(){
     return(
       <div>
         <Switch style={{height: '100%'}}>
-          <Route exact path="/" component={LocalList}/>
+          <Route exact path="/" component={Category}/>
           <Route exact path="/search" component={Search}/>
           <Route path="/channel/:id" component={ChannelContainer}/>
           <Route path="/lyric" component={Lyric}/>
