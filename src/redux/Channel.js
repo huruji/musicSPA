@@ -42,17 +42,12 @@ export function fetchChannelList(id) {
     const url = `${CONFIG.baseUrl}?${CONFIG.channelMethod}&type=${id}`;
     return fetchJsonp(url,{
       timeout: 5000
-    }).then((response) =>(
-          response.json()
-        )
-      ).then((json) => {
+    }).then((response) => response.json())
+        .then((json) => {
         const music = changeJson(json);
         dispatch(updateChannelList(music));
         dispatch(fetchingSuccess())
-      }).catch(((err) => {
-        console.log('catch');
-        dispatch(fetchingFailed());
-    }))
+      }).catch(err => dispatch(fetchingFailed()))
   }
 }
 

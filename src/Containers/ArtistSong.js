@@ -6,6 +6,9 @@ import {fetchArtistSong} from './../redux/ArtistSong';
 import {fetchArtistAlbum} from './../redux/AritstAlbum';
 import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
+import Hlayer from './../assets/hlayer/Hlayer';
+import FetchingFailed from './../Components/FetchingFailed';
+
 
 class ArtistSong extends Component{
   constructor(){
@@ -14,17 +17,24 @@ class ArtistSong extends Component{
 
   componentWillMount(){
     const uid = this.props.match.params.tinguid;
-    if(this.props.artistInfo.ting_uid !== uid){
+    if(this.props.artistInfo.ting_uid != uid){
       this.props.fetchArtistInfo(uid);
-      this.props.fetchArtistSong(uid);
       this.props.fetchArtistAlbum(uid);
     }
   }
 
   render(){
-    console.log('match');
-    console.log(this.props);
-    const {themeColor, artistInfo, match, artistAlbumInfo} = {...this.props};
+    const {themeColor, artistInfo, match, artistAlbumInfo,artistInfoFetching, artistInfoFailed, artistAlbumFetching, artistAlbumFailed} = {...this.props};
+    if(artistInfoFetching || artistAlbumFetching){
+      return (
+          <Hlayer type="loading" handleShow={this.handleLoadingShow} config = {{animateType: 3, time: 7000, loadingType: 2, shadow: true, loadingColor: themeColor}}/>
+      )
+    }
+    if(artistInfoFailed || artistAlbumFailed){
+      return (
+          <FetchingFailed/>
+      )
+    }
     return(
         <div>
           <ArtistHeader {...artistInfo} themeColor={themeColor}/>
@@ -34,7 +44,6 @@ class ArtistSong extends Component{
           </ul>
           {
             artistAlbumInfo.map((item,index) => {
-              console.log(item);
               return (
                   <ArtistSongContent key={index}  themeColor={themeColor} listContent={item.songlist} showDuration='table-cell' albumimg={item.albumInfo ? item.albumInfo.pic_big : ''} albumid={item.albumInfo ? item.albumInfo.album_id : ''} publishtime={item.albumInfo ? item.albumInfo.publishtime : ''} title={item.albumInfo ? item.albumInfo.title : ''}  loveSearchList={item.songlist}/>
               )
@@ -49,10 +58,13 @@ class ArtistSong extends Component{
 const mapStateToProps = (state) => {
   const themeColor = state.Setting.themes[state.Setting.curThemeIndex].color;
   return {
-    songList: state.ArtistSong.songList,
     artistInfo: state.ArtistInfo,
     artistAlbumInfo: state.ArtistAlbum.albumInfo,
-    themeColor
+    themeColor,
+    artistInfoFetching: state.ArtistInfo.fetching,
+    arthstInfoFailed: state.ArtistInfo.failed,
+    artistAlbumFetching: state.ArtistAlbum.fetching,
+    artistAlbumFailed: state.ArtistAlbum.failed
   }
 };
 

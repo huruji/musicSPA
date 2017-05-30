@@ -1,6 +1,7 @@
-import Redux from 'redux';
 import fetchJsonp from 'fetch-jsonp';
 import Config from './../config';
+
+import {fetching, fetchingFailed, fetchingSuccess} from './FetchState';
 
 const RECEIVESEARCH = 'RECEIVESEARCH';
 
@@ -31,15 +32,16 @@ export const receiveSearch = (keyword, json) => {
 
 export const fetchSearch = (keyword) => {
   return (dispatch, getState) => {
-    console.log('getState');
-    console.log(getState());
+    dispatch(fetching());
     const url = `${Config.baseUrl}?${Config.searchMethod}${keyword}${Config.searchSize}`;
-    fetchJsonp(url)
-        .then(response => response.json())
+    fetchJsonp(url,{
+      timeout: 5000
+    }).then(response => response.json())
         .then(json => {
           console.log(json);
           dispatch(receiveSearch(keyword, json));
-        })
+          dispatch(fetchingSuccess())
+        }).catch(err => dispatch(fetchingFailed()))
   }
 };
 

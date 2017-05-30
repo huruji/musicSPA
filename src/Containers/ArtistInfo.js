@@ -6,6 +6,8 @@ import {fetchArtistSong} from './../redux/ArtistSong';
 import {fetchArtistAlbum} from './../redux/AritstAlbum';
 import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
+import Hlayer from './../assets/hlayer/Hlayer';
+import FetchingFailed from './../Components/FetchingFailed';
 
 class ArtistInfo extends Component{
   constructor(){
@@ -13,14 +15,23 @@ class ArtistInfo extends Component{
   }
   componentWillMount(){
     const uid = this.props.match.params.tinguid;
-    this.props.fetchArtistInfo(uid);
-    this.props.fetchArtistSong(uid);
-    this.props.fetchArtistAlbum(uid);
+    if(this.props.artistInfo.ting_uid != uid){
+      this.props.fetchArtistInfo(uid);
+      this.props.fetchArtistAlbum(uid);
+    }
   }
   render(){
-    console.log('match');
-    console.log(this.props);
-    const {themeColor, match, artistInfo} = {...this.props};
+    const {themeColor, match, artistInfo,artistInfoFetching, artistInfoFailed, artistAlbumFetching, artistAlbumFailed} = {...this.props};
+    if(artistInfoFetching || artistAlbumFetching){
+      return (
+          <Hlayer type="loading" handleShow={this.handleLoadingShow} config = {{animateType: 3, time: 7000, loadingType: 2, shadow: true, loadingColor: themeColor}}/>
+      )
+    }
+    if(artistInfoFailed || artistAlbumFailed){
+      return (
+          <FetchingFailed/>
+      )
+    }
     return(
         <div>
           <ArtistHeader {...this.props.artistInfo} themeColor={themeColor}/>
@@ -28,7 +39,6 @@ class ArtistInfo extends Component{
             <li className="artist-navbar-item"><NavLink to={`/artistsong/${match.params.tinguid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: themeColor}}>专辑</NavLink></li>
             <li className="artist-navbar-item"><NavLink to={`/artistinfo/${match.params.tinguid}`} activeClassName='artist-navbar-item-active' activeStyle={{backgroundColor: themeColor}}>歌手详情</NavLink></li>
           </ul>
-
           <ArtistIntro {...artistInfo}/>
         </div>
     )
@@ -41,7 +51,11 @@ const mapStateToProps = (state) => {
     songList: state.ArtistSong.songList,
     artistInfo: state.ArtistInfo,
     artistAlbumInfo: state.ArtistAlbum.albumInfo,
-    themeColor
+    themeColor,
+    artistInfoFetching: state.ArtistInfo.fetching,
+    arthstInfoFailed: state.ArtistInfo.failed,
+    artistAlbumFetching: state.ArtistAlbum.fetching,
+    artistAlbumFailed: state.ArtistAlbum.failed
   }
 };
 

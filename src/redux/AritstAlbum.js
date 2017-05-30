@@ -5,11 +5,16 @@ const UPDATEALBUMLIST = 'UPDATEALBUMLIST';
 const ADDALBUMINFO = 'ADDALBUMINFO';
 const UPDATEALBUMINFO = 'UPDATEALBUMINFO';
 const INSERTALBUMINFO = 'INSERTALBUMINFO';
+const FETCHING = 'FETCHING';
+const FETCHINGFAILED = 'FETCHINGFAILED';
+const FETCHINGSUCCESS = 'FETCHINGSUCCESS';
 
 const initialState = {
   albumlist: [],
   albumnums: 0,
-  albumInfo: []
+  albumInfo: [],
+  fetching: false,
+  failed: false
 };
 
 const ArtistAlbum = function(state,action){
@@ -25,6 +30,12 @@ const ArtistAlbum = function(state,action){
       return {...state, albumInfo: action.albumInfo};
     case INSERTALBUMINFO:
       return {...state, albumInfo: state.albumInfo.slice(0,action.index).concat(action.albumInfo).concat(state.albumInfo.slice(action.index + 1))};
+    case FETCHING:
+      return {...state, fetching: true, failed: false};
+    case FETCHINGFAILED:
+      return {...state, fetching: false, failed: true};
+    case FETCHINGSUCCESS:
+      return {...state, fetching: false, failed: false};
     default:
       return state;
   }
@@ -57,14 +68,32 @@ export const insertAlbumInfo = (index, albumInfo) => {
     index,
     albumInfo
   }
-}
+};
+
+const fetching = () => {
+  return {
+    type: FETCHING
+  }
+};
+const fetchingFailed = () => {
+  return {
+    type: FETCHINGFAILED
+  }
+};
+const fetchingSuccess = () => {
+  return {
+    type: FETCHINGSUCCESS
+  }
+};
 
 
 export const fetchArtistAlbum = (tinguid) => {
   return (dispatch, getState) => {
+    dispatch(fetching());
     const url = `${CONFIG.baseUrl}?${CONFIG.artistAlbum}${tinguid}`;
-    fetchJsonp(url)
-        .then(response => response.json())
+    fetchJsonp(url, {
+      timeout: 10000
+    }).then(response => response.json())
         .then(json => {
           const albumlist = json.albumlist;
           const albumnums = json.albumnums;
@@ -80,10 +109,12 @@ export const fetchArtistAlbum = (tinguid) => {
                 .then(response => response.json())
                 .then(json => {
                   dispatch(insertAlbumInfo(index, json));
+                  if(index === albumlist.length - 1){
+                    console.log(1222222);
+                    dispatch(fetchingSuccess());
+                  }
                 })
           });
-
-
         })
   }
 };
