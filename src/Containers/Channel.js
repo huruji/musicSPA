@@ -6,12 +6,14 @@ import CONFIG from './../config';
 import changeJson from './../utils/changeJson';
 import  {fetchChannelList} from './../redux/Channel';
 import {connect} from 'react-redux';
-import {playAll} from './../redux/index'
+import {playAll} from './../redux/index';
+import Hlayer from './../assets/hlayer/Hlayer';
+import FetchingFailed from './../Components/FetchingFailed';
 
 class ChannelContainer extends Component{
   constructor(props){
     super(props);
-    this.state = {id : this.props.match.params.id}
+    this.state = {id : this.props.match.params.id};
   }
   componentWillMount(){
     this.props.fetchChannelList(this.props.match.params.id);
@@ -22,7 +24,20 @@ class ChannelContainer extends Component{
     }
   }
   render() {
-    let {name, avator_url, length, date, comment, song_list, action, playAll, loveSearchList, themeColor} = this.props;
+    let {name, avator_url, length, date, comment, song_list, action, playAll, loveSearchList, themeColor, fetching, failed} = this.props;
+    if(fetching){
+      console.log('1231232343');
+      return (
+          <Hlayer type="loading" handleShow={this.handleLoadingShow} config = {{animateType: 3, time: 7000, loadingType: 2, shadow: true, loadingColor: themeColor}}/>
+      )
+    }
+    console.log(failed);
+    if(failed){
+      console.log('safdsdf');
+      return (
+          <FetchingFailed/>
+      )
+    }
     return(
       <div>
         <ListHeader url={avator_url} themeColor={themeColor} themelistName={name} listcnt={length} date={date} comment={comment} playAll={playAll}/>
@@ -44,7 +59,9 @@ const mapStateToProps = (state) => {
     comment: resiveMusic.comment,
     song_list: resiveMusic.song_list,
     loveSearchList: loveSearchList,
-    themeColor
+    themeColor,
+    fetching: resiveMusic.fetching,
+    failed: resiveMusic.failed
   }
 };
 

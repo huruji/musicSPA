@@ -8,12 +8,13 @@ class SearchArtist extends Component{
   render() {
     let artist = null;
     let album = null;
-    if(this.props.is_artist){
+    const {is_artist, is_album} = {...this.props};
+    if(is_artist){
       artist = <SearchArtistItem img={this.props.artist.avatar.small}
                                  title={'歌手：' +this.props.artist.name}
                                   src={`/artistsong/${this.props.artist.ting_uid}`}/>
     }
-    if(this.props.is_album) {
+    if(is_album) {
       album = <SearchArtistItem img={this.props.album.pic_small}
                                 title={'专辑：'+this.props.album.title}
                                 src={`/albumsong/${this.props.album.album_id}`}/>
