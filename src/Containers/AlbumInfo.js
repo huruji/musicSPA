@@ -7,14 +7,30 @@ import {fetchArtistAlbum} from './../redux/AritstAlbum';
 import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import {fetchAlbumInfo} from './../redux/AlbumInfo'
+import Hlayer from './../assets/hlayer/Hlayer';
+import FetchingFailed from './../Components/FetchingFailed';
 
 class AlbumInfo extends Component{
   constructor(){
     super();
   }
-
+  componentWillMount(){
+    if(this.props.match.params.albumid !== this.props.albumInfo.album_id) {
+      this.props.fetchAlbumInfo(this.props.match.params.albumid);
+    }
+  }
   render(){
-    const {albumInfo, themeColor, match} = {...this.props};
+    const {albumInfo, themeColor, match, fetching, failed} = {...this.props};
+    if(fetching){
+      return (
+          <Hlayer type="loading" handleShow={this.handleLoadingShow} config = {{animateType: 3, time: 7000, loadingType: 2, shadow: true, loadingColor: themeColor}}/>
+      )
+    }
+    if(failed){
+      return (
+          <FetchingFailed/>
+      )
+    }
     return(
         <div>
           <AlbumHeader albumInfo={albumInfo} themeColor={themeColor}/>
@@ -32,10 +48,13 @@ const mapStateToProps = (state) => {
   const albumInfo = state.AlbumInfo.albumInfo;
   const loveSearchList = state.AlbumInfo.songlist;
   const themeColor = state.Setting.themes[state.Setting.curThemeIndex].color;
+  const {fetching, failed} = {...state.FetchState};
   return {
     albumInfo,
     loveSearchList,
-    themeColor
+    themeColor,
+    fetching,
+    failed
   }
 };
 

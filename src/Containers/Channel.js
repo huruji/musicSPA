@@ -26,14 +26,11 @@ class ChannelContainer extends Component{
   render() {
     let {name, avator_url, length, date, comment, song_list, action, playAll, loveSearchList, themeColor, fetching, failed} = this.props;
     if(fetching){
-      console.log('1231232343');
       return (
           <Hlayer type="loading" handleShow={this.handleLoadingShow} config = {{animateType: 3, time: 7000, loadingType: 2, shadow: true, loadingColor: themeColor}}/>
       )
     }
-    console.log(failed);
     if(failed){
-      console.log('safdsdf');
       return (
           <FetchingFailed/>
       )

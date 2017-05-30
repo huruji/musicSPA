@@ -1,5 +1,7 @@
 import fetchJsonp from 'fetch-jsonp';
 import CONFIG from './../config';
+import {fetching, fetchingFailed, fetchingSuccess} from './FetchState';
+
 
 const UPDATEALBUMINFO = 'UPDATEALBUMINFO';
 
@@ -30,6 +32,7 @@ const updateAlbumInfo = (albumInfo, songlist) => {
 
 export const fetchAlbumInfo= (album_id) => {
   return (dispatch, getState) => {
+    dispatch(fetching());
     const url = `${CONFIG.baseUrl}?${CONFIG.albumSong}${album_id}`;
     fetchJsonp(url)
         .then(response => response.json())
@@ -37,7 +40,8 @@ export const fetchAlbumInfo= (album_id) => {
           const albumInfo = json.albumInfo;
           const songlist = json.songlist;
           dispatch(updateAlbumInfo(albumInfo, songlist));
-        })
+          dispatch(fetchingSuccess())
+        }).catch(err => dispatch(fetchingFailed()))
   }
 };
 

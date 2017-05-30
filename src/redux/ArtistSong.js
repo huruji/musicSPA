@@ -24,21 +24,22 @@ export const updateArtistSong = (songList) => {
     type: UPDATEARTISTSONG,
     songList: songList
   }
-}
+};
 
 
 export const fetchArtistSong = (tinguid) => {
   return (dispatch, getState) => {
     const url = `${CONFIG.baseUrl}?${CONFIG.artistSong}${tinguid}`;
     console.log(url);
-    fetchJsonp(url)
-        .then(response => response.json())
+    fetchJsonp(url,{
+      timeout: 5000
+    }).then(response => response.json())
         .then(json => {
           console.log(json);
           dispatch(updateArtistSong(json.songlist));
         })
   }
-}
+};
 
 export default ArtistSong;
 
