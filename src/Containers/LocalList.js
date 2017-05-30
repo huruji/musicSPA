@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import ListHeader from './../Components/ListHeader';
 import ListContent from './../Components/ListContent';
 import {connect} from 'react-redux';
-import {updateLocalList, deleteRomLocalList} from './../redux/LocaPlayList'
 import './../img/default_avator.jpg';
 
 class LocalList extends Component{

@@ -1,6 +1,5 @@
 import React,{ Component } from 'react';
 import PlayListTable from '../Components/PlayListTable';
-import {addPlayList} from './../redux/PlayList';
 import {connect} from 'react-redux';
 import {fetchAddPlaySong} from '../redux'
 class PlayListPanel extends Component {

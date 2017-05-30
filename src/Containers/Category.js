@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import CategoryItem from './../Components/CategoryItem';
 import {fetchCategory} from './../redux/Category';
-import CONFIG from './../config';
 
 class Category extends Component{
   constructor(){

@@ -6,7 +6,7 @@ import Recommand from '../Components/Recommand';
 import {connect} from 'react-redux';
 import {getLyric} from '../redux/MusicNow';
 import {fetchCommandList} from '../redux/Recommand';
-import {fetchAddPlaySong, loveShift, addSongToPlayList} from './../redux';
+import {fetchAddPlaySong} from './../redux';
 
 class Lyric extends Component{
   constructor(){

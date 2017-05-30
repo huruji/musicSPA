@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import CategorySongHeader from '../Components/CategorySongHeader';
 import {fetchCategorySong} from './../redux/CategorySong';
-import CONFIG from './../config';
 import ListContent from './../Components/ListContent';
 
 class CategorySong extends Component{
