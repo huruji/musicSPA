@@ -7,7 +7,7 @@ const RECEIVESEARCH = 'RECEIVESEARCH';
 
 const initialState = {
   searchInfo: {song_list: [], album: {}, artist:{}},
-  searchKeyword: ''
+  searchKeyword: '',
 };
 const SearchList = (state=initialState, action) => {
   if(!state){

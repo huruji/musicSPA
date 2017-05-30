@@ -51,6 +51,7 @@ const mapStateToProps = (state) => {
   const resiveMusic = state.ResiveMusic;
   const loveSearchList = state.ResiveMusic.song_list;
   const themeColor = state.Setting.themes[state.Setting.curThemeIndex].color;
+  const fetchingState = state.FetchState;
   return {
     avator_url: resiveMusic.avator_url,
     name: resiveMusic.name,
@@ -60,8 +61,8 @@ const mapStateToProps = (state) => {
     song_list: resiveMusic.song_list,
     loveSearchList: loveSearchList,
     themeColor,
-    fetching: resiveMusic.fetching,
-    failed: resiveMusic.failed
+    fetching: fetchingState.fetching,
+    failed: fetchingState.failed
   }
 };
 

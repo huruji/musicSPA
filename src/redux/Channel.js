@@ -2,13 +2,15 @@ import fetchJsonp from 'fetch-jsonp';
 import CONFIG from './../config';
 import changeJson from './../utils/changeJson';
 
+import {fetching, fetchingFailed, fetchingSuccess} from './FetchState';
+
 const UPDATEREAIVEMUSIC = 'UPDATEREAIVEMUSIC';
-const FETCHINGFAILED = 'FETCHINGFAILED';
-const FETCHING = 'FETCHING';
+
+
 
 const ResiveMusic = function(state,action){
   if(!state){
-    return {length:0,date:'',name:'',comment:'',avator_url:'',song_list:[],fetching:false,failed: false}
+    return {length:0,date:'',name:'',comment:'',avator_url:'',song_list:[]}
   }
   switch(action.type){
     case UPDATEREAIVEMUSIC:
@@ -19,12 +21,7 @@ const ResiveMusic = function(state,action){
         name: action.billboard.name,
         avator_url: action.billboard.avator_url,
         song_list: action.song_list,
-        fetching: false
       };
-    case FETCHINGFAILED:
-      return {...state, failed: true, fetching: false};
-    case FETCHING:
-      return {...state, fetching: true};
     default:
       return state
   }
@@ -38,17 +35,6 @@ export const updateChannelList = (json) => {
   }
 };
 
-export const fetchFailed = () => {
-  return {
-    type: FETCHINGFAILED
-  }
-};
-
-export const fetching = () => {
-  return {
-    type: FETCHING
-  }
-}
 
 export function fetchChannelList(id) {
   return (dispatch, getState) => {
@@ -62,9 +48,10 @@ export function fetchChannelList(id) {
       ).then((json) => {
         const music = changeJson(json);
         dispatch(updateChannelList(music));
+        dispatch(fetchingSuccess())
       }).catch(((err) => {
         console.log('catch');
-        dispatch(fetchFailed());
+        dispatch(fetchingFailed());
     }))
   }
 }
