@@ -9,12 +9,10 @@ import {NavLink} from 'react-router-dom';
 import Hlayer from './../assets/hlayer/Hlayer';
 import FetchingFailed from './../Components/FetchingFailed';
 
-
 class ArtistSong extends Component{
   constructor(){
     super();
   }
-
   componentWillMount(){
     const uid = this.props.match.params.tinguid;
     if(this.props.artistInfo.ting_uid != uid){

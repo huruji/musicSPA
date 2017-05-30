@@ -30,7 +30,9 @@ const initState = {
   playListShow: false,
   album_title: '我害怕',
   lyricContent:[],
-  lyricTime: []
+  lyricTime: [],
+  album_id:'',
+  ting_uid:''
 };
 
 const MusicNow = (state = initState, action) => {

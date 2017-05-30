@@ -34,13 +34,13 @@ class Lyric extends Component{
     }
   }
   render() {
-    const {pic_big, playFlag, title, album_title, author, lrclink, lyricContent, lyricTime, curTime, recommandList} = {...this.props};
+    const {pic_big, playFlag, title, album_title, album_id, ting_uid, author, lrclink, lyricContent, lyricTime, curTime, recommandList} = {...this.props};
     return(
       <div className="lyric clear-float">
         <div className="clear-float">
           <LyricImg pic_big={pic_big} playFlag={playFlag}/>
           <div className="lyric-container">
-            <LyricInfo title={title} album_title={album_title} author={author}/>
+            <LyricInfo title={title} album_title={album_title} author={author} album_id={album_id} ting_uid={ting_uid}/>
             <LyricContent lrclink={lrclink} lyricContent={lyricContent} lyricTime={lyricTime} curTime={curTime}/>
           </div>
         </div>
@@ -52,6 +52,7 @@ class Lyric extends Component{
 
 const mapStateToProps = (state) => {
   const musicNow = state.MusicNow;
+  console.log(musicNow);
   const recommandList = state.Recommand.recommandList;
   return {
     title: musicNow.song_title,
@@ -64,7 +65,9 @@ const mapStateToProps = (state) => {
     lyricContent: musicNow.lyricContent,
     lyricTime: musicNow.lyricTime,
     curTime: musicNow.curTime,
-    recommandList
+    recommandList,
+    album_id: musicNow.album_id,
+    ting_uid: musicNow.ting_uid
   }
 };
 

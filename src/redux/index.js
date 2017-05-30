@@ -83,6 +83,7 @@ export const fetchAddPlaySong = (id,songList) => {
             }
           });
         }
+        console.log(json);
         const song = changeSongJson(json);
         dispatch(updatePlaySong(song));
         const newSong = !getState().MusicNow.newSong;
