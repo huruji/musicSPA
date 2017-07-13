@@ -42,13 +42,8 @@ export const addSongToPlayList  = (song_id, loveSearchList) => {
   return (dispatch, getState) => {
     const receiveIds = loveSearchList.map((item) => {return item.song_id});
     const playListIds = getState().PlayList.song_list.map((item) => {return item.song_id});
-    console.log('ids');
-    console.log(song_id);
-    console.log(receiveIds);
-    console.log(playListIds);
     if(receiveIds.includes(song_id) && !playListIds.includes(song_id)) {
       let addSong;
-      console.log('addSong');
       loveSearchList.forEach((item, index, arr) => {
         if(item.song_id == song_id) {
           addSong = {...arr[index]};
