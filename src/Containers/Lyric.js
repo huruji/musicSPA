@@ -14,15 +14,21 @@ class Lyric extends Component{
     this.getLyric = this.getLyric.bind(this);
     this.fetchAddPlaySong = this.fetchAddPlaySong.bind(this);
   }
+
+  // 获取歌词
   getLyric(){
     this.props.getLyric(this.props.song_id);
   }
+
+  // 获取推荐歌曲列表
   getRecommand() {
     this.props.fetchCommandList(this.props.song_id);
   }
+
   fetchAddPlaySong(song_id){
     this.props.fetchAddPlaySong(song_id, this.props.recommandList);
   }
+
   componentDidMount(){
     this.getLyric();
     this.getRecommand()
@@ -34,7 +40,12 @@ class Lyric extends Component{
     }
   }
   render() {
+    // pic_big:歌曲图片   playFlay:是否播放   title：歌曲名
+    // album_id:专辑ID    ting_uid:歌手ID   author:歌手
+    // lrclink:歌词连接   lyricContent:歌曲内容   lyricTime:歌词时间
+    // curTime:当前时间   recommandList:推荐歌曲列表
     const {pic_big, playFlag, title, album_title, album_id, ting_uid, author, lrclink, lyricContent, lyricTime, curTime, recommandList} = {...this.props};
+
     return(
       <div className="lyric clear-float">
         <div className="clear-float">
@@ -52,7 +63,6 @@ class Lyric extends Component{
 
 const mapStateToProps = (state) => {
   const musicNow = state.MusicNow;
-  console.log(musicNow);
   const recommandList = state.Recommand.recommandList;
   return {
     title: musicNow.song_title,
