@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Header from './Containers/Header';
+import Header from './Containers/public/Header';
 import SiderBar from './Components/SideBar';
 import {BrowserRouter as Router, Route, HashRouter} from 'react-router-dom'
 import Routers from './router/Routers';
-import PlayListPanel from './Containers/PlayListPanel';
-import MusicPanel from './Containers/MusicPanel';
+import PlayListPanel from './Containers/public/PlayListPanel';
+import MusicPanel from './Containers/public/MusicPanel';
 import './css/main.css';
 import './assets/hlayer/hlayer.css';
 
