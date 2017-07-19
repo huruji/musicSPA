@@ -5,7 +5,7 @@ const RecommandItem = (props) => {
 
   const fetch = function() {
     fetchAddPlaySong(song.song_id)
-  }
+  };
   return (
     <li onClick={fetch}>
       <img src={song.pic_small} alt=""/>
