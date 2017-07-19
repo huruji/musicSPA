@@ -12,33 +12,32 @@ class Header extends Component{
     this.handleSearchClick = this.handleSearchClick.bind(this);
     this.toggleThemeShow = this.toggleThemeShow.bind(this);
     this.changeTheme = this.changeTheme.bind(this);
-    this.shiftMaxed = this.shiftMaxed.bind(this);
   }
   handleChange(event){
     this.setState({searchValue:event.target.value});
   };
+
+  // 点击搜索
   handleSearchClick(){
     this.props.fetchSearchSong(this.keyword.value);
   };
+
+  // 更换主题
   changeTheme(e){
     e.stopPropagation();
-    console.log(121212);
-    console.log(e);
     const index = e.target.getAttribute('data-index');
     this.props.updateCurTheme(index);
   }
-  shiftMaxed(){
-  }
+
+  // 更换主题面板显示影藏
   toggleThemeShow(e){
     e.stopPropagation();
     e.cancelBubble= true;
-    console.log(1231232);
     this.setState((prevState) => {return {themeShow: !prevState.themeShow}})
   }
-  componentDidMount(){
-  }
+
   render(){
-    const {themes, curThemeIndex, } = {...this.props};
+    const {themes, curThemeIndex} = {...this.props};
     return(
       <div className="header clear-float" style={{background: themes[curThemeIndex].color}}>
         <div className="logo">
@@ -51,7 +50,9 @@ class Header extends Component{
           <span onClick={() => history.go(1)}><i className="iconfont">&#xf0344;</i></span>
         </div>
         <div className="searchArea">
-          <input type="text" placeholder="搜索音乐，歌手，歌词" className="searchInput"  value={this.state.searchValue} ref={(keyword) => this.keyword = keyword} onChange={this.handleChange}/>
+          <form onSubmit={this.handleSearchClick}>
+            <input type="text" placeholder="搜索音乐，歌手，歌词" className="searchInput"  value={this.state.searchValue} ref={(keyword) => this.keyword = keyword} onChange={this.handleChange}/>
+          </form>
           <Link to='/search' className="searchBtn" onClick={this.handleSearchClick}/>
         </div>
         <div className="setting-area" style={{position:'relative'}}>
@@ -81,6 +82,7 @@ const mapStateToProps = (state) => {
     curThemeIndex: setting.curThemeIndex
   }
 };
+
 const mapDispatchToProps = (dispatch) => {
   return{
     fetchSearchSong: (keyword) => dispatch(fetchSearch(keyword)),
