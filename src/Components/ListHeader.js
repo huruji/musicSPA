@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 const ListHeader = (props) => {
   const {url, themeColor, listName, comment, playAll, date, listcnt} = {...props};
