@@ -1,16 +1,8 @@
 import React, {Component} from 'react';
 
-class ListHeader extends Component{
-  constructor(props){
-    super(props);
-    this.playAll = this.playAll.bind(this);
-  }
-  playAll(){
-    this.props.playAll();
-  }
-  render(){
-    const {url, themeColor, listName, comment} = {...this.props};
-    return(
+const ListHeader = (props) => {
+  const {url, themeColor, listName, comment, playAll, date, listcnt} = {...props};
+  return(
     <div className="list-header">
       <div className="list-avatar" style={{background: `url(${url})`}}>
       </div>
@@ -18,13 +10,13 @@ class ListHeader extends Component{
         <div className="list-title">
           <div>
             <span className="list-logo" style={{backgroundColor: themeColor}}>歌单</span>
-            <span className="list-name">{this.props.listName}</span>
+            <span className="list-name">{listName}</span>
           </div>
-          <p>{this.props.date}创建</p>
+          <p>{date}创建</p>
         </div>
         <div className="list-btn">
           <div className="list-playAll">
-            <span className="list-text" onClick={this.playAll}>
+            <span className="list-text" onClick={playAll}>
               <i className="m-icon m-play" style={{color: themeColor}}></i>
               播放全部
             </span>
@@ -32,16 +24,15 @@ class ListHeader extends Component{
           </div>
         </div>
         <div className="list-comment">
-          <span>简介</span>{comment}
+          <span>简介：</span>{comment}
         </div>
       </div>
       <div className="list-count">
-        {this.props.listcnt}
+        {listcnt}
       </div>
     </div>
-    );
-  }
-}
+  )
+};
 
 
 export default ListHeader;

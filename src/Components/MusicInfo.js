@@ -14,6 +14,4 @@ const MusicInfo = (props) => {
   )
 };
 
-
-
 export default MusicInfo

@@ -18,8 +18,6 @@ class MusicControl extends Component {
     this.playPrev = this.playPrev.bind(this);
   }
   playListShow(){
-    console.log(1212);
-    console.log(this.props.show);
     this.props.playListShow()
   }
   playShift(){
@@ -42,15 +40,12 @@ class MusicControl extends Component {
     }
   }
   playNext(){
-    console.log('next');
     this.props.playNext();
   }
   playPrev() {
-    console.log('prev');
     this.props.playPrev();
   }
   changeTimeLine(e){
-    console.log(this.props);
     const currentTime = (e.clientX - offsetLeft(e.currentTarget)) / e.currentTarget.clientWidth * this.props.totalTime;
     this.props.changeCurTime(currentTime);
     this.audio.currentTime = currentTime;
@@ -62,8 +57,6 @@ class MusicControl extends Component {
   }
   componentDidUpdate(prevProps){
     if(this.props.newSong){
-      console.log('newProps.curTime');
-      console.log(this.props.curTime);
       this.audio.currentTime = this.props.curTime;
       this.props.updateNewSong(!this.props.newSong);
     }
@@ -73,16 +66,11 @@ class MusicControl extends Component {
     if (this.props.song_url !== prevProps.song_url) {
       clearInterval(this.songTimer);
       this.audio.load();
-      console.log(11111);
-      console.log('netwoekstate:');
-      console.log(this.audio.networkState);
       this.audio.currentTime = this.props.curTime;
       if (this.audio.networkState == 1) {
         clearInterval(this.songTimer);
-        console.log(this.props);
         this.audio.currentTime = this.props.curTime;
         this.audio.play();
-        console.log('play net');
       }
       this.songTimer = setInterval(function () {
         if(this.audio.networkState == 3 || this.audio.networkState == 2) {
@@ -90,11 +78,7 @@ class MusicControl extends Component {
         } else if(this.audio.networkState == 1) {
           clearInterval(this.songTimer);
           this.audio.play();
-          console.log('play net');
         }
-          console.log('netwoekstate:');
-          console.log(this.audio.networkState);
-          
         }.bind(this), 30);
       }
     }
