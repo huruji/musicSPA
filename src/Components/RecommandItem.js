@@ -1,23 +1,17 @@
 import React, {Component} from 'react';
 
-class RecommandItem extends Component{
-  constructor(){
-    super();
-    this.fetchAddPlaySong = this.fetchAddPlaySong.bind(this);
-  }
-  fetchAddPlaySong(){
-    this.props.fetchAddPlaySong((this.props.song.song_id));
-  }
+const RecommandItem = (props) => {
+  const {song, fetchAddPlaySong} = {...props};
 
-  render(){
-    const {song} = {...this.props};
-    return (
-        <li onClick={this.fetchAddPlaySong}>
-          <img src={song.pic_small} alt=""/>
-          <p>{song.author}-{song.title}</p>
-        </li>
-    )
+  const fetch = function() {
+    fetchAddPlaySong(song.song_id)
   }
-}
+  return (
+    <li onClick={fetch}>
+      <img src={song.pic_small} alt=""/>
+      <p>{song.author}-{song.title}</p>
+    </li>
+  )
+};
 
 export default RecommandItem;

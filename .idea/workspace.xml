@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cea22a8b-5b40-4850-ba93-9eb9c0a69ac5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/LyricContent.js" afterPath="$PROJECT_DIR$/src/Components/LyricContent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/LyricImg.js" afterPath="$PROJECT_DIR$/src/Components/LyricImg.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/LyricInfo.js" afterPath="$PROJECT_DIR$/src/Components/LyricInfo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Recommand.js" afterPath="$PROJECT_DIR$/src/Components/Recommand.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/RecommandItem.js" afterPath="$PROJECT_DIR$/src/Components/RecommandItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/main.css" afterPath="$PROJECT_DIR$/src/css/main.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,16 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ArtistSong.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Containers/ArtistSong.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="27" column="63" lean-forward="false" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Routers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/router/Routers.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,11 +42,43 @@
       <file leaf-file-name="Lyric.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Containers/Lyric.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="1071">
               <caret line="63" column="21" lean-forward="true" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Recommand.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Recommand.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecommandItem.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/RecommandItem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recommand.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/css/recommand.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,36 +117,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LyricContent.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LyricContent.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/LyricContent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+            <state relative-caret-position="420">
+              <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListCellView.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/ListCellView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListCell.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/ListCell.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="45" column="3" lean-forward="true" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -167,15 +165,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Components/ArtistHeader.js" />
         <option value="$PROJECT_DIR$/src/Components/ArtistIntro.js" />
         <option value="$PROJECT_DIR$/src/Components/ArtistSongContent.js" />
         <option value="$PROJECT_DIR$/src/Components/CategoryItem.js" />
         <option value="$PROJECT_DIR$/src/Components/CategorySongHeader.js" />
         <option value="$PROJECT_DIR$/src/Components/ListCell.js" />
         <option value="$PROJECT_DIR$/src/Components/PlayListTable.js" />
-        <option value="$PROJECT_DIR$/src/Components/Recommand.js" />
-        <option value="$PROJECT_DIR$/src/Components/RecommandItem.js" />
         <option value="$PROJECT_DIR$/src/Components/SearchArtist.js" />
         <option value="$PROJECT_DIR$/src/Components/SearchArtistItem.js" />
         <option value="$PROJECT_DIR$/src/Components/FetchingFailed.js" />
@@ -218,6 +213,9 @@
         <option value="$PROJECT_DIR$/src/Components/LyricImg.js" />
         <option value="$PROJECT_DIR$/src/Components/LyricInfo.js" />
         <option value="$PROJECT_DIR$/src/Components/LyricContent.js" />
+        <option value="$PROJECT_DIR$/src/Components/Recommand.js" />
+        <option value="$PROJECT_DIR$/src/Components/RecommandItem.js" />
+        <option value="$PROJECT_DIR$/src/css/recommand.scss" />
       </list>
     </option>
   </component>
@@ -349,7 +347,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Components" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -494,14 +492,7 @@
       <workItem from="1496751678593" duration="27000" />
       <workItem from="1499950264725" duration="1429000" />
       <workItem from="1500036545057" duration="3148000" />
-      <workItem from="1500464133676" duration="8102000" />
-    </task>
-    <task id="LOCAL-00009" summary="解决多次双击播放时间不返回0的问题:rocket&#10;&#10;">
-      <created>1494915180031</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1494915180031</updated>
+      <workItem from="1500464133676" duration="10087000" />
     </task>
     <task id="LOCAL-00010" summary="完成播放全部的功能:rocket&#10;&#10;">
       <created>1494937203085</created>
@@ -839,11 +830,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500469957669</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="LyricContent、LyricImg、LyricInfo组件更新，修正歌词向下滚动停止不返回">
+      <created>1500472492257</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1500472492257</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277652000" />
+    <option name="totallyTimeSpent" value="279637000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -910,7 +908,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加专辑链接功能:rocket:&#10;&#10;" />
     <MESSAGE value="添加榜单专辑、音乐人链接:rocket:&#10;&#10;" />
     <MESSAGE value="完成专辑歌曲和专辑信息页面:rocket:&#10;&#10;" />
     <MESSAGE value="添加返回后退的iconfont:rocket:&#10;&#10;" />
@@ -935,7 +932,8 @@
     <MESSAGE value="将listContent,ListCellView更换为function形式,添加注释" />
     <MESSAGE value="处理无comment的情况" />
     <MESSAGE value="Lyric组件添加注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lyric组件添加注释" />
+    <MESSAGE value="LyricContent、LyricImg、LyricInfo组件更新，修正歌词向下滚动停止不返回" />
+    <option name="LAST_COMMIT_MESSAGE" value="LyricContent、LyricImg、LyricInfo组件更新，修正歌词向下滚动停止不返回" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -963,13 +961,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Components/ArtistIntro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/ArtistSongContent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -1037,20 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Recommand.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/RecommandItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1345,16 +1322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Containers/Lyric.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="63" column="21" lean-forward="true" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/ListContent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -1367,8 +1334,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/LyricContent.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Containers/Lyric.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="63" column="21" lean-forward="true" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Recommand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/RecommandItem.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/recommand.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
           <folding />
         </state>
       </provider>
