@@ -24,7 +24,7 @@ const ListHeader = (props) => {
           </div>
         </div>
         <div className="list-comment">
-          <span>简介：</span>{comment}
+          <span>简介：</span>{comment ? comment : "暂无简介"}
         </div>
       </div>
       <div className="list-count">
