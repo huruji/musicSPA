@@ -26,7 +26,6 @@ class ArtistSong extends Component{
     // artistAlbumInfo:音乐人专辑信息数组    artistInfoFetching:音乐人信息是否在获取
     // artistInfoFailed:获取音乐人信息是否失败     artistAlbumFetching:音乐人专辑是否在获取
     //artistAlbumFailed:获取音乐人专辑信息是否失败
-    console.log(this.props);
     const {themeColor, artistInfo, match, artistAlbumInfo,artistInfoFetching, artistInfoFailed, artistAlbumFetching, artistAlbumFailed} = {...this.props};
 
     // 信息在获取则返回loading

@@ -21,17 +21,24 @@ class ArtistInfo extends Component{
     }
   }
   render(){
+
+    //
     const {themeColor, match, artistInfo,artistInfoFetching, artistInfoFailed, artistAlbumFetching, artistAlbumFailed} = {...this.props};
+
+    // 音乐人、音乐人专辑信息获取中返回loading
     if(artistInfoFetching || artistAlbumFetching){
       return (
           <Hlayer type="loading" handleShow={this.handleLoadingShow} config = {{animateType: 3, time: 7000, loadingType: 2, shadow: true, loadingColor: themeColor}}/>
       )
     }
+
+    // 音乐人、音乐人专辑信息获取中返回失败页面
     if(artistInfoFailed || artistAlbumFailed){
       return (
           <FetchingFailed/>
       )
     }
+
     return(
         <div>
           <ArtistHeader {...this.props.artistInfo} themeColor={themeColor}/>
