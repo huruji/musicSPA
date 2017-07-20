@@ -6,7 +6,7 @@ const ArtistSongContent = (props) => {
   // albumid:专辑ID   albumimg:专辑图片   publishtime:发行时间
   // themeColor:主题色   showDuration:是否显示时长   listContent:歌曲列表
   // loveSearchList:    title：专辑名称
-  const {albumid, albumimg, publishtime, themeColor, showDuration, listContent, loveSearchList, title} = {...this.props};
+  const {albumid, albumimg, publishtime, themeColor, showDuration, listContent, loveSearchList, title} = {...props};
   return(
     <div className="clear-float" style={{margin:'0 20px'}}>
       <div className="album-img-container" >

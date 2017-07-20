@@ -92,7 +92,7 @@ export const fetchArtistAlbum = (tinguid) => {
     dispatch(fetching());
     const url = `${CONFIG.baseUrl}?${CONFIG.artistAlbum}${tinguid}`;
     fetchJsonp(url, {
-      timeout: 10000
+      timeout: 100000
     }).then(response => response.json())
         .then(json => {
           const albumlist = json.albumlist;

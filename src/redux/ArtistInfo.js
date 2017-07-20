@@ -48,7 +48,7 @@ export const fetchArtistInfo = (tinguid) => {
     dispatch(fetching());
     const url = `${CONFIG.baseUrl}?${CONFIG.artistInfo}${tinguid}`;
     fetchJsonp(url,{
-      timeout: 5000
+      timeout: 100000
     }).then(response => response.json())
         .then(json => {
           dispatch(updateArtistInfo(json));
