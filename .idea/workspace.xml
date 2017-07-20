@@ -4,7 +4,6 @@
     <list default="true" id="cea22a8b-5b40-4850-ba93-9eb9c0a69ac5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/AlbumIntro.js" afterPath="$PROJECT_DIR$/src/Components/AlbumIntro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Containers/ArtistInfo.js" afterPath="$PROJECT_DIR$/src/Containers/ArtistInfo.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/Components/AlbumIntro.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -458,14 +457,7 @@
       <workItem from="1499950264725" duration="1429000" />
       <workItem from="1500036545057" duration="3148000" />
       <workItem from="1500464133676" duration="11498000" />
-      <workItem from="1500556959247" duration="1123000" />
-    </task>
-    <task id="LOCAL-00013" summary="完成播放列表显示隐藏切换功能::rocket&#10;&#10;">
-      <created>1495000548031</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1495000548031</updated>
+      <workItem from="1500556959247" duration="1811000" />
     </task>
     <task id="LOCAL-00014" summary="完成播放列表按钮显示播放列表歌曲数量的功能::rocket&#10;&#10;">
       <created>1495000793015</created>
@@ -803,11 +795,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500480955433</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="音乐人信息页面部分组件修改为function">
+      <created>1500558128311</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1500558128311</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282171000" />
+    <option name="totallyTimeSpent" value="282859000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -874,7 +873,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加返回后退的iconfont:rocket:&#10;&#10;" />
     <MESSAGE value="添加切换主题的功能:rocket:&#10;&#10;" />
     <MESSAGE value="完成切换主题的功能:rocket:&#10;&#10;" />
     <MESSAGE value="修复专辑页面切换主题的bug:bug:&#10;&#10;" />
@@ -899,7 +897,8 @@
     <MESSAGE value="LyricContent、LyricImg、LyricInfo组件更新，修正歌词向下滚动停止不返回" />
     <MESSAGE value="recommand组件样式调整" />
     <MESSAGE value="音乐人专辑页面修改stateless组件添加注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="音乐人专辑页面修改stateless组件添加注释" />
+    <MESSAGE value="音乐人信息页面部分组件修改为function" />
+    <option name="LAST_COMMIT_MESSAGE" value="音乐人信息页面部分组件修改为function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1290,7 +1289,7 @@
     <entry file="file://$PROJECT_DIR$/src/Components/AlbumIntro.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>

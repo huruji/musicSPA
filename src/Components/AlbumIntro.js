@@ -1,5 +1,4 @@
-import React,{Component} from 'react';
-
+import React from 'react';
 
 const AlbumIntro = (props) => {
   let intro = [];
@@ -12,6 +11,5 @@ const AlbumIntro = (props) => {
     </div>
   )
 };
-
 
 export default AlbumIntro;
