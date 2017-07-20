@@ -22,7 +22,9 @@ class ArtistInfo extends Component{
   }
   render(){
 
-    //
+    // themeColor:主题色    match:路由信息    artistInfoFetching:音乐人信息是否在获取中
+    // artistInfoFailed:音乐人信息是否获取失败   artistAlbumFetching:音乐人专辑信息是否在获取中
+    // artistAlbumFailed:音乐人专辑信息是否在获取失败
     const {themeColor, match, artistInfo,artistInfoFetching, artistInfoFailed, artistAlbumFetching, artistAlbumFailed} = {...this.props};
 
     // 音乐人、音乐人专辑信息获取中返回loading
