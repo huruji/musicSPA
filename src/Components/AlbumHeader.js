@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
 
 const AlbumHeader = (props) => {
-
+  // pic_big:专辑封面   title:专辑名   author:作者
+  // publishtime:发行时间
   const {pic_big, title, author, publishtime} = {...props.albumInfo};
   const themeColor = props.themeColor;
 

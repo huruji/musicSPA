@@ -19,17 +19,23 @@ class AlbumInfo extends Component{
   render(){
     console.log('albumInfo Props:', this.props);
     // albumInfo:   themeColor:主题色    match:路由信息
+    // fetching：是否在获取中    failed:是否获取失败
     const {albumInfo, themeColor, match, fetching, failed} = {...this.props};
+
+    // 信息获取中返回loading
     if(fetching){
       return (
           <Hlayer type="loading" handleShow={this.handleLoadingShow} config = {{animateType: 3, time: 7000, loadingType: 2, shadow: true, loadingColor: themeColor}}/>
       )
     }
+
+    // 信息获取失败返回失败页面
     if(failed){
       return (
           <FetchingFailed/>
       )
     }
+
     return(
         <div>
           <AlbumHeader albumInfo={albumInfo} themeColor={themeColor}/>
