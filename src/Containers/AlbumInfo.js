@@ -17,6 +17,8 @@ class AlbumInfo extends Component{
     }
   }
   render(){
+    console.log('albumInfo Props:', this.props);
+    // albumInfo:   themeColor:主题色    match:路由信息
     const {albumInfo, themeColor, match, fetching, failed} = {...this.props};
     if(fetching){
       return (
